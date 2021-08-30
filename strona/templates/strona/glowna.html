@@ -1,10 +1,25 @@
+{% load static %}
 <html>
     <head>
         <title>PIwoYErbaWIno</title>
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="{% static 'css/strona.css' %}">
+        <link href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
     </head>
     <body>
-        PIwo Yerba WIno
-
-        
+        <div class='page-header'>
+            <h1><a href="/">PIwo Yerba WIno</a></h1>
+            <br/>
+        </div>
+        <div class="content container">
+            <div class="row">
+                <div class="col-md-8">
+                    <div class='strona'>
+                        <h1><a href="{% url 'yerba_list' %}">Lista Yerb</a></h1>
+                    </div>
+                </div>
+            </div>
+        </div>
     </body>
 </html>
