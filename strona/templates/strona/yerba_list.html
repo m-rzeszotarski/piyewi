@@ -1,0 +1,25 @@
+<html>
+    <head>
+        <title>PIwoYErbaWIno</title>
+    </head>
+    <body>
+        <div>
+            <h1><a href="/">PIwo Yerba WIno</a></h1>
+            <br/>
+        </div>
+        
+        {% for yerba in yerbas %}
+            <div>
+                <p> {{ yerba.firma }} <a href="">{{ yerba.nazwa }}</a></p>
+                <p>Zapylenie: {{ yerba.zapylenie }}</p>
+                <p>Aromat: {{ yerba.aromat }}</p>
+                <p>Moc: {{ yerba.moc }}</p>
+                <p>Goryczka: {{ yerba.goryczka }}</p>
+                <p>Nuty smakowe: {{ yerba.nuty_smakowe }}</p>
+                <p>Ocena: {{ yerba.ocena }}</p>
+                <p>Uwagi: {{ yerba.uwagi }}</p>
+                <br/>
+            </div>   
+        {% endfor %}
+    </body>
+</html>
