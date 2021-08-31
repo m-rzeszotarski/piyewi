@@ -2,6 +2,7 @@ from strona.forms import YerbaForm
 from django.shortcuts import render, get_object_or_404, redirect
 from django.utils import timezone
 from .models import Yerba
+from django.contrib.auth.decorators import login_required
 
 def glowna(request):
     return render(request, 'strona/glowna.html')
@@ -14,6 +15,7 @@ def yerba_detail(request, pk):
     yerba = get_object_or_404(Yerba, pk=pk)
     return render(request, 'strona/yerba_detail.html', {'yerba': yerba})
 
+@login_required
 def yerba_new(request):
     if request.method == "POST":
         form = YerbaForm(request.POST)
@@ -27,6 +29,7 @@ def yerba_new(request):
         form = YerbaForm()
     return render(request, 'strona/yerba_edit.html', {'form': form})
 
+@login_required
 def yerba_edit(request, pk):
     yerba = get_object_or_404(Yerba, pk=pk)
     if request.method == "POST":
@@ -40,3 +43,9 @@ def yerba_edit(request, pk):
     else:
         form = YerbaForm(instance=yerba)
     return render(request, 'strona/yerba_edit.html', {'form': form})
+
+@login_required
+def yerba_remove(request, pk):
+    yerba = get_object_or_404(Yerba, pk=pk)
+    yerba.delete()
+    return redirect('yerba_list')

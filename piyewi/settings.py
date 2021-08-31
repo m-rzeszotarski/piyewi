@@ -132,3 +132,5 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 TIME_ZONE = 'Europe/Warsaw'
 
 LANGUAGE_CODE = 'pl-pl'
+
+LOGIN_REDIRECT_URL = '/'

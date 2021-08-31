@@ -9,6 +9,7 @@
         {% endif %}
         {% if user.is_authenticated %}
             <a class="btn btn-default" href="{% url 'yerba_edit' pk=yerba.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
+            <a class="btn btn-default" href="{% url 'yerba_remove' pk=yerba.pk %}"><span class="glyphicon glyphicon-remove"></span></a>
         {% endif %}
         <h2>{{ yerba.firma }} {{ yerba.nazwa }}</h2>
         <p>Zapylenie: {{ yerba.zapylenie }}</p>

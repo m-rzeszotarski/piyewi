@@ -7,4 +7,5 @@ urlpatterns = [
     path('yerba/<int:pk>/', views.yerba_detail, name='yerba_detail'),
     path('yerba/new', views.yerba_new, name='yerba_new'),
     path('yerba/<int:pk>/edit/', views.yerba_edit, name='yerba_edit'),
+    path('yerba/<pk>/remove/', views.yerba_remove, name='yerba_remove'),
 ]
