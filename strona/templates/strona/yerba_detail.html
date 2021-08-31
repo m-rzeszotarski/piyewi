@@ -1,0 +1,23 @@
+{% extends 'strona/base.html' %}
+
+{% block content %}
+    <div class="strona">
+        {% if yerba.data %}
+            <div class="date">
+                {{ post.published_date }}
+            </div>
+        {% endif %}
+        {% if user.is_authenticated %}
+            <a class="btn btn-default" href="{% url 'yerba_edit' pk=yerba.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
+        {% endif %}
+        <h2>{{ yerba.firma }} {{ yerba.nazwa }}</h2>
+        <p>Zapylenie: {{ yerba.zapylenie }}</p>
+        <p>Aromat: {{ yerba.aromat }}</p>
+        <p>Moc: {{ yerba.moc }}</p>
+        <p>Goryczka: {{ yerba.goryczka }}</p>
+        <p>Nuty smakowe: {{ yerba.nuty_smakowe }}</p>
+        <p>Ocena: {{ yerba.ocena }}</p>
+        <p>Uwagi: {{ yerba.uwagi }}</p>
+        <br/>
+    </div>   
+{% endblock %}

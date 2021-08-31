@@ -1,36 +1,22 @@
-{% load static %}
-<html>
-    <head>
-        <title>PIwoYErbaWIno</title>
-        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
-        <link rel="stylesheet" href="{% static 'css/strona.css' %}">
-        <link href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
-    </head>
-    <body>
-        <div class='page-header'>
-            <h1><a href="/">PIwo Yerba WIno</a></h1>
+{% extends 'strona/base.html' %}
+
+{% block content %}
+        {% if user.is_authenticated %}
+            <a href="{% url 'yerba_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
+        {% endif %}
+            <h1>Lista Yerb</h1>
+    {% for yerba in yerbas %}
+        <div class="strona">
+            <h3><a href="{% url 'yerba_detail' pk=yerba.pk %}">{{ yerba.firma }} {{ yerba.nazwa }}</a></h3>
+            <p>Zapylenie: {{ yerba.zapylenie }}</p>
+            <p>Aromat: {{ yerba.aromat }}</p>
+            <p>Moc: {{ yerba.moc }}</p>
+            <p>Goryczka: {{ yerba.goryczka }}</p>
+            <p>Nuty smakowe: {{ yerba.nuty_smakowe }}</p>
+            <p>Ocena: {{ yerba.ocena }}</p>
+            <p>Uwagi: {{ yerba.uwagi }}</p>
             <br/>
-        </div>
-        
-        <div class="content container">
-            <div class="row">
-                <div class="col-md-8">
-                    {% for yerba in yerbas %}
-                        <div class="strona">
-                            <h3><a href="">{{ yerba.firma }} {{ yerba.nazwa }}</a></h3>
-                            <p>Zapylenie: {{ yerba.zapylenie }}</p>
-                            <p>Aromat: {{ yerba.aromat }}</p>
-                            <p>Moc: {{ yerba.moc }}</p>
-                            <p>Goryczka: {{ yerba.goryczka }}</p>
-                            <p>Nuty smakowe: {{ yerba.nuty_smakowe }}</p>
-                            <p>Ocena: {{ yerba.ocena }}</p>
-                            <p>Uwagi: {{ yerba.uwagi }}</p>
-                            <br/>
-                        </div>   
-                    {% endfor %}
-                </div>
-            </div>
-        </div>
-    </body>
-</html>
+        </div>   
+    {% endfor %}
+</div>
+{% endblock %}

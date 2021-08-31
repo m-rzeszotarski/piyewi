@@ -5,20 +5,6 @@ class Yerba(models.Model):
 
     NUMERY = [
         (0, '0'),
-        (1, '1'),
-        (2, '2'),
-        (3, '3'),
-        (4, '4'),
-        (5, '5'),
-        (6, '6'),
-        (7, '7'),
-        (8, '8'),
-        (9, '9'),
-        (10, '10'),
-    ]
-
-    XNUMERY = [
-        (0, '0'),
         (0.5, '0.5'),
         (1, '1'),
         (1.5, '1.5'),
@@ -66,7 +52,7 @@ class Yerba(models.Model):
         default=0
     )
     ocena = models.PositiveSmallIntegerField(
-        choices=XNUMERY,
+        choices=NUMERY,
         default=0
     )
     uwagi = models.TextField(blank=True, null=True)
