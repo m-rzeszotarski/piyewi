@@ -1,8 +1,8 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.utils import timezone
 from django.contrib.auth.decorators import login_required
-from .models import Yerba, Piwo
-from strona.forms import YerbaForm, PiwoForm
+from .models import Yerba, Piwo, Wino
+from strona.forms import YerbaForm, PiwoForm, WinoForm
 
 def glowna(request):
     return render(request, 'strona/glowna.html')
@@ -96,3 +96,48 @@ def piwo_remove(request, pk):
     piwo = get_object_or_404(Piwo, pk=pk)
     piwo.delete()
     return redirect('piwo_list')
+
+## wino
+
+def wino_list(request):
+    winos = Wino.objects.all()
+    return render(request, 'strona/wino_list.html', {'winos': winos})
+
+def wino_detail(request, pk):
+    wino = get_object_or_404(Wino, pk=pk)
+    return render(request, 'strona/wino_detail.html', {'wino': wino})
+
+@login_required
+def wino_new(request):
+    if request.method == "POST":
+        form = WinoForm(request.POST)
+        if form.is_valid():
+            wino = form.save(commit=False)
+            wino.autor = request.user
+            wino.data = timezone.now()
+            wino.save()
+            return redirect('wino_detail', pk=wino.pk)
+    else:
+        form = WinoForm()
+    return render(request, 'strona/wino_edit.html', {'form': form})
+
+@login_required
+def wino_edit(request, pk):
+    wino = get_object_or_404(Wino, pk=pk)
+    if request.method == "POST":
+        form = WinoForm(request.POST, instance=wino)
+        if form.is_valid():
+            wino = form.save(commit=False)
+            wino.autor = request.user
+            wino.data = timezone.now()
+            wino.save()
+            return redirect('wino_detail', pk=wino.pk)
+    else:
+        form = WinoForm(instance=wino)
+    return render(request, 'strona/wino_edit.html', {'form': form})
+
+@login_required
+def wino_remove(request, pk):
+    wino = get_object_or_404(Wino, pk=pk)
+    wino.delete()
+    return redirect('wino_list')

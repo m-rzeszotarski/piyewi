@@ -1,0 +1,26 @@
+{% extends 'strona/base.html' %}
+
+{% block content %}
+    <div class="strona">
+        {% if wino.data %}
+            <div class="date">
+                {{ post.published_date }}
+            </div>
+        {% endif %}
+        {% if user.is_authenticated %}
+            <a class="btn btn-default" href="{% url 'wino_edit' pk=wino.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
+            <a class="btn btn-default" href="{% url 'wino_remove' pk=wino.pk %}"><span class="glyphicon glyphicon-remove"></span></a>
+        {% endif %}
+        <h2>{{ wino.firma }} {{ wino.nazwa }}</h2>
+        <p>Typ: {{ wino.typ }}</p>
+        <p>Kolor: {{ wino.kolor }}</p>
+        <p>Klarowność: {{ wino.klarowność }}</p>
+        <p>Musowanie: {{ wino.musowanie }}</p>
+        <p>Aromat: {{ wino.aromat }}</p>
+        <p>Moc: {{ wino.moc }}</p>
+        <p>Nuty owocowe: {{ wino.nuty_owocowe }}</p>
+        <p>Ocena: {{ wino.ocena }}</p>
+        <p>Uwagi: {{ wino.uwagi }}</p>
+        <br/>
+    </div>   
+{% endblock %}
