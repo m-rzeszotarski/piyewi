@@ -7,7 +7,7 @@
             <h1>Lista Win</h1>
     {% for wino in winos %}
         <div class="strona">
-            <h3><a href="{% url 'wino_detail' pk=wino.pk %}">{{ wino.firma }} {{ wino.nazwa }}</a></h3>
+            <h3><a href="{% url 'wino_detail' pk=wino.pk %}">{{ wino.firma }}: {{ wino.nazwa }}</a></h3>
             <p>Typ: {{ wino.typ }}</p>
             <p>Kolor: {{ wino.kolor }}</p>
             <p>Klarowność: {{ wino.klarowność }}</p>

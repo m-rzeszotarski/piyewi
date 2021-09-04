@@ -11,7 +11,7 @@
             <a class="btn btn-default" href="{% url 'wino_edit' pk=wino.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
             <a class="btn btn-default" href="{% url 'wino_remove' pk=wino.pk %}"><span class="glyphicon glyphicon-remove"></span></a>
         {% endif %}
-        <h2>{{ wino.firma }} {{ wino.nazwa }}</h2>
+        <h2>{{ wino.firma }}: {{ wino.nazwa }}</h2>
         <p>Typ: {{ wino.typ }}</p>
         <p>Kolor: {{ wino.kolor }}</p>
         <p>Klarowność: {{ wino.klarowność }}</p>

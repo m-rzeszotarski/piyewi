@@ -1,0 +1,24 @@
+{% extends 'strona/base.html' %}
+
+{% block content %}
+    <div class="strona">
+        {% if kawa.data %}
+            <div class="date">
+                {{ post.published_date }}
+            </div>
+        {% endif %}
+        {% if user.is_authenticated %}
+            <a class="btn btn-default" href="{% url 'kawa_edit' pk=kawa.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
+            <a class="btn btn-default" href="{% url 'kawa_remove' pk=kawa.pk %}"><span class="glyphicon glyphicon-remove"></span></a>
+        {% endif %}
+        <h2>{{ kawa.firma }}: {{ kawa.nazwa }}</h2>
+        <p>Arabica [%]: {{ kawa.arabica }}</p>
+        <p>Robusta [%]: {{ kawa.robusta }}</p>
+        <p>Stopień Palenia: {{ kawa.stopień_palenia }}</p>
+        <p>Kwasowość: {{ kawa.kwasowość }}</p>
+        <p>Moc: {{ kawa.moc }}</p>
+        <p>Ocena: {{ kawa.ocena }}</p>
+        <p>Uwagi: {{ kawa.uwagi }}</p>
+        <br/>
+    </div>   
+{% endblock %}

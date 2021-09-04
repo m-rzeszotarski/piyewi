@@ -7,7 +7,7 @@
             <h1>Lista Piw</h1>
     {% for piwo in piwos %}
         <div class="strona">
-            <h3><a href="{% url 'piwo_detail' pk=piwo.pk %}">{{ piwo.firma }} {{ piwo.nazwa }}</a></h3>
+            <h3><a href="{% url 'piwo_detail' pk=piwo.pk %}">{{ piwo.firma }}: {{ piwo.nazwa }}</a></h3>
             <p>Typ: {{ piwo.typ }}</p>
             <p>Aromat: {{ piwo.aromat }}</p>
             <p>Smak: {{ piwo.smak }}</p>

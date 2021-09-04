@@ -11,7 +11,7 @@
             <a class="btn btn-default" href="{% url 'piwo_edit' pk=piwo.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
             <a class="btn btn-default" href="{% url 'piwo_remove' pk=piwo.pk %}"><span class="glyphicon glyphicon-remove"></span></a>
         {% endif %}
-        <h2>{{ piwo.firma }} {{ piwo.nazwa }}</h2>
+        <h2>{{ piwo.firma }}: {{ piwo.nazwa }}</h2>
         <p>Typ: {{ piwo.typ }}</p>
         <p>Aromat: {{ piwo.aromat }}</p>
         <p>Smak: {{ piwo.smak }}</p>

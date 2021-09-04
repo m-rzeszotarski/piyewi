@@ -1,8 +1,8 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.utils import timezone
 from django.contrib.auth.decorators import login_required
-from .models import Yerba, Piwo, Wino
-from strona.forms import YerbaForm, PiwoForm, WinoForm
+from .models import Yerba, Piwo, Wino, Kawa
+from strona.forms import YerbaForm, PiwoForm, WinoForm, KawaForm
 
 def glowna(request):
     return render(request, 'strona/glowna.html')
@@ -141,3 +141,48 @@ def wino_remove(request, pk):
     wino = get_object_or_404(Wino, pk=pk)
     wino.delete()
     return redirect('wino_list')
+
+## kawa
+
+def kawa_list(request):
+    kawas = Kawa.objects.all()
+    return render(request, 'strona/kawa_list.html', {'kawas': kawas})
+
+def kawa_detail(request, pk):
+    kawa = get_object_or_404(Kawa, pk=pk)
+    return render(request, 'strona/kawa_detail.html', {'kawa': kawa})
+
+@login_required
+def kawa_new(request):
+    if request.method == "POST":
+        form = KawaForm(request.POST)
+        if form.is_valid():
+            kawa = form.save(commit=False)
+            kawa.autor = request.user
+            kawa.data = timezone.now()
+            kawa.save()
+            return redirect('kawa_detail', pk=kawa.pk)
+    else:
+        form = KawaForm()
+    return render(request, 'strona/kawa_edit.html', {'form': form})
+
+@login_required
+def kawa_edit(request, pk):
+    kawa = get_object_or_404(Kawa, pk=pk)
+    if request.method == "POST":
+        form = KawaForm(request.POST, instance=kawa)
+        if form.is_valid():
+            kawa = form.save(commit=False)
+            kawa.autor = request.user
+            kawa.data = timezone.now()
+            kawa.save()
+            return redirect('kawa_detail', pk=kawa.pk)
+    else:
+        form = KawaForm(instance=kawa)
+    return render(request, 'strona/kawa_edit.html', {'form': form})
+
+@login_required
+def kawa_remove(request, pk):
+    kawa = get_object_or_404(Kawa, pk=pk)
+    kawa.delete()
+    return redirect('kawa_list')

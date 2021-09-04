@@ -7,7 +7,7 @@
             <h1>Lista Yerb</h1>
     {% for yerba in yerbas %}
         <div class="strona">
-            <h3><a href="{% url 'yerba_detail' pk=yerba.pk %}">{{ yerba.firma }} {{ yerba.nazwa }}</a></h3>
+            <h3><a href="{% url 'yerba_detail' pk=yerba.pk %}">{{ yerba.firma }}: {{ yerba.nazwa }}</a></h3>
             <p>Zapylenie: {{ yerba.zapylenie }}</p>
             <p>Aromat: {{ yerba.aromat }}</p>
             <p>Moc: {{ yerba.moc }}</p>

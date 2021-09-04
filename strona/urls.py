@@ -18,4 +18,9 @@ urlpatterns = [
     path('wino/new', views.wino_new, name='wino_new'),
     path('wino/<int:pk>/edit/', views.wino_edit, name='wino_edit'),
     path('wino/<int:pk>/remove/', views.wino_remove, name='wino_remove'),
+    path('kawa_list', views.kawa_list, name='kawa_list'),
+    path('kawa/<int:pk>/', views.kawa_detail, name='kawa_detail'),
+    path('kawa/new', views.kawa_new, name='kawa_new'),
+    path('kawa/<int:pk>/edit/', views.kawa_edit, name='kawa_edit'),
+    path('kawa/<int:pk>/remove/', views.kawa_remove, name='kawa_remove'),
 ]

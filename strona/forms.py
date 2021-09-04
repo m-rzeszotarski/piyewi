@@ -1,5 +1,5 @@
 from django import forms
-from .models import Yerba, Piwo, Wino
+from .models import Kawa, Yerba, Piwo, Wino
 
 class YerbaForm(forms.ModelForm):
 
@@ -18,3 +18,9 @@ class WinoForm(forms.ModelForm):
     class Meta:
         model = Wino
         fields = ('firma', 'nazwa', 'typ', 'kolor', 'klarowność', 'musowanie', 'aromat', 'moc', 'nuty_owocowe', 'ocena', 'uwagi')
+
+class KawaForm(forms.ModelForm):
+
+    class Meta:
+        model = Kawa
+        fields = ('firma', 'nazwa', 'arabica', 'robusta', 'stopień_palenia', 'kwasowość', 'moc', 'ocena', 'uwagi')

@@ -1,0 +1,22 @@
+{% extends 'strona/base.html' %}
+
+{% block content %}
+        {% if user.is_authenticated %}
+            <a href="{% url 'kawa_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
+        {% endif %}
+            <h1>Lista Kaw</h1>
+    {% for kawa in kawas %}
+        <div class="strona">
+            <h3><a href="{% url 'kawa_detail' pk=kawa.pk %}">{{ kawa.firma }}: {{ kawa.nazwa }}</a></h3>
+            <p>Arabica [%]: {{ kawa.arabica }}</p>
+            <p>Robusta [%]: {{ kawa.robusta }}</p>
+            <p>Stopień Palenia: {{ kawa.stopień_palenia }}</p>
+            <p>Kwasowość: {{ kawa.kwasowość }}</p>
+            <p>Moc: {{ kawa.moc }}</p>
+            <p>Ocena: {{ kawa.ocena }}</p>
+            <p>Uwagi: {{ kawa.uwagi }}</p>
+            <br/>
+        </div>   
+    {% endfor %}
+</div>
+{% endblock %}
