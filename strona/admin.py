@@ -6,4 +6,4 @@ admin.site.register(Piwo)
 admin.site.register(Wino)
 admin.site.register(Kawa)
 
-# Register your models here.
+

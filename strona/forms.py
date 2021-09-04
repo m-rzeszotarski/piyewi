@@ -24,3 +24,7 @@ class KawaForm(forms.ModelForm):
     class Meta:
         model = Kawa
         fields = ('firma', 'nazwa', 'arabica', 'robusta', 'stopień_palenia', 'kwasowość', 'moc', 'ocena', 'uwagi')
+        labels = {
+            'arabica' : "Arabica [%]",
+            'robusta' : "Robusta [%]"
+        }
