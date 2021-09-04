@@ -269,10 +269,10 @@ class Kawa(models.Model):
         choices = SKŁAD,
         default= 0
     )
-    robusta = models.PositiveSmallIntegerField(
-        choices = SKŁAD,
-        default= 0
-    )
+    
+    def robusta(self):
+        return 100 - int(self.arabica)
+
     stopień_palenia = models.FloatField(
         choices=NUMERY,
         default=0
