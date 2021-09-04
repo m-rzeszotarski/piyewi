@@ -4,54 +4,54 @@ from django.utils import timezone
 class Yerba(models.Model):
 
     NUMERY = [
-        (0, '0'),
+        (0.0, '0'),
         (0.5, '0.5'),
-        (1, '1'),
+        (1.0, '1'),
         (1.5, '1.5'),
-        (2, '2'),
+        (2.0, '2'),
         (2.5, '2.5'),
-        (3, '3'),
+        (3.0, '3'),
         (3.5, '3.5'),
-        (4, '4'),
+        (4.0, '4'),
         (4.5, '4.5'),
-        (5, '5'),
+        (5.0, '5'),
         (5.5, '5.5'),
-        (6, '6'),
+        (6.0, '6'),
         (6.5, '6.5'),
-        (7, '7'),
+        (7.0, '7'),
         (7.5, '7.5'),
-        (8, '8'),
+        (8.0, '8'),
         (8.5, '8.5'),
-        (9, '9'),
+        (9.0, '9'),
         (9.5, '9.5'),
-        (10, '10'),
+        (10.0, '10'),
     ]
 
     autor = models.ForeignKey('auth.User', on_delete=models.CASCADE)
     data = models.DateField(default=timezone.now)
     firma = models.CharField(max_length=200)
     nazwa = models.CharField(max_length=200)
-    zapylenie = models.PositiveSmallIntegerField(
+    zapylenie = models.FloatField(
         choices=NUMERY,
         default=0
     )
-    aromat = models.PositiveSmallIntegerField(
+    aromat = models.FloatField(
         choices=NUMERY,
         default=0
     )
-    moc = models.PositiveSmallIntegerField(
+    moc = models.FloatField(
         choices=NUMERY,
         default=0
     )
-    goryczka = models.PositiveSmallIntegerField(
+    goryczka = models.FloatField(
         choices=NUMERY,
         default=0
     )
-    nuty_owocowe = models.PositiveSmallIntegerField(
+    nuty_owocowe = models.FloatField(
         choices=NUMERY,
         default=0
     )
-    ocena = models.PositiveSmallIntegerField(
+    ocena = models.FloatField(
         choices=NUMERY,
         default=0
     )
@@ -60,3 +60,91 @@ class Yerba(models.Model):
     def __str__(self):
         return self.nazwa
 
+
+class Piwo(models.Model):
+
+    NUMERY = [
+        (0.0, '0'),
+        (0.5, '0.5'),
+        (1.0, '1'),
+        (1.5, '1.5'),
+        (2.0, '2'),
+        (2.5, '2.5'),
+        (3.0, '3'),
+        (3.5, '3.5'),
+        (4.0, '4'),
+        (4.5, '4.5'),
+        (5.0, '5'),
+        (5.5, '5.5'),
+        (6.0, '6'),
+        (6.5, '6.5'),
+        (7.0, '7'),
+        (7.5, '7.5'),
+        (8.0, '8'),
+        (8.5, '8.5'),
+        (9.0, '9'),
+        (9.5, '9.5'),
+        (10.0, '10'),
+    ]
+
+    JASNE = 'jasne'
+    CIEMNE = 'ciemne'
+    TYP_PIWA = [
+        (JASNE, 'jasne'),
+        (CIEMNE, 'ciemne'),
+    ]
+
+    autor = models.ForeignKey('auth.User', on_delete=models.CASCADE)
+    data = models.DateField(default=timezone.now)
+    firma = models.CharField(max_length=200)
+    nazwa = models.CharField(max_length=200)
+
+    typ = models.CharField(
+        max_length=32,
+        choices=TYP_PIWA,
+        default=JASNE,
+    )
+    aromat = models.FloatField(
+        choices=NUMERY,
+        default=0
+    )
+    smak = models.FloatField(
+        choices=NUMERY,
+        default=0
+    )
+    moc = models.FloatField(
+        choices=NUMERY,
+        default=0
+    )
+    goryczka = models.FloatField(
+        choices=NUMERY,
+        default=0
+    )
+    nuty_owocowe = models.FloatField(
+        choices=NUMERY,
+        default=0
+    )
+    piana = models.FloatField(
+        choices=NUMERY,
+        default=0
+    )
+    kolor = models.FloatField(
+        choices=NUMERY,
+        default=0
+    )
+    mętność = models.FloatField(
+        choices=NUMERY,
+        default=0
+    )
+    zgazowanie = models.FloatField(
+        choices=NUMERY,
+        default=0
+    )
+    ocena = models.FloatField(
+        choices=NUMERY,
+        default=0
+    )
+    uwagi = models.TextField(blank=True, null=True)
+
+    def __str__(self):
+        return self.nazwa

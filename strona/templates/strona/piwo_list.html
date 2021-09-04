@@ -1,0 +1,27 @@
+{% extends 'strona/base.html' %}
+
+{% block content %}
+        {% if user.is_authenticated %}
+            <a href="{% url 'piwo_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
+        {% endif %}
+            <h1>Lista Piw</h1>
+    {% for piwo in piwos %}
+        <div class="strona">
+            <h3><a href="{% url 'piwo_detail' pk=piwo.pk %}">{{ piwo.firma }} {{ piwo.nazwa }}</a></h3>
+            <p>Typ: {{ piwo.typ }}</p>
+            <p>Aromat: {{ piwo.aromat }}</p>
+            <p>Smak: {{ piwo.smak }}</p>
+            <p>Moc: {{ piwo.moc }}</p>
+            <p>Goryczka: {{ piwo.goryczka }}</p>
+            <p>Nuty owocowe: {{ piwo.nuty_owocowe }}</p>
+            <p>Piana: {{ piwo.piana }}</p>
+            <p>Kolor: {{piwo.kolor }}</p>
+            <p>Mętność: {{piwo.mętność }}</p>
+            <p>Zgazowanie: {{ piwo.zgazowanie }}</p>
+            <p>Ocena: {{ piwo.ocena }}</p>
+            <p>Uwagi: {{ piwo.uwagi }}</p>
+            <br/>
+        </div>   
+    {% endfor %}
+</div>
+{% endblock %}

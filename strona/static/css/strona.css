@@ -34,6 +34,10 @@ h1, h2, h3, h4 {
     width: 100%;
 }
 
+.piwo-form textarea, .piwo-form input {
+    width: 100%;
+}
+
 .top-menu, .top-menu:hover, .top-menu:visited {
     color: #ffffff;
     float: right;

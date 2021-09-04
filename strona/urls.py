@@ -7,5 +7,10 @@ urlpatterns = [
     path('yerba/<int:pk>/', views.yerba_detail, name='yerba_detail'),
     path('yerba/new', views.yerba_new, name='yerba_new'),
     path('yerba/<int:pk>/edit/', views.yerba_edit, name='yerba_edit'),
-    path('yerba/<pk>/remove/', views.yerba_remove, name='yerba_remove'),
+    path('yerba/<int:pk>/remove/', views.yerba_remove, name='yerba_remove'),
+    path('piwo_list', views.piwo_list, name='piwo_list'),
+    path('piwo/<int:pk>/', views.piwo_detail, name='piwo_detail'),
+    path('piwo/new', views.piwo_new, name='piwo_new'),
+    path('piwo/<int:pk>/edit/', views.piwo_edit, name='piwo_edit'),
+    path('piwo/<int:pk>/remove/', views.piwo_remove, name='piwo_remove'),
 ]
