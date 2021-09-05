@@ -1,9 +1,7 @@
 {% extends 'strona/base.html' %}
 
 {% block content %}
-        {% if user.is_authenticated %}
             <a href="{% url 'wino_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
-        {% endif %}
             <h1>Lista Win</h1>
     {% for wino in winos %}
         <div class="strona">

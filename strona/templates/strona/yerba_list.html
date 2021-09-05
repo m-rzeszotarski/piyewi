@@ -1,9 +1,7 @@
 {% extends 'strona/base.html' %}
 
 {% block content %}
-        {% if user.is_authenticated %}
             <a href="{% url 'yerba_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
-        {% endif %}
             <h1>Lista Yerb</h1>
     {% for yerba in yerbas %}
         <div class="strona">
