@@ -29,7 +29,7 @@ class Yerba(models.Model):
         (10.0, '10'),
     ]
 
-    autor = models.ForeignKey('auth.User', on_delete=models.CASCADE)
+    autor = models.CharField(max_length=200)
     data = models.DateField(default=timezone.now)
     firma = models.CharField(max_length=200)
     nazwa = models.CharField(max_length=200)
@@ -97,7 +97,7 @@ class Piwo(models.Model):
         (CIEMNE, 'ciemne'),
     ]
 
-    autor = models.ForeignKey('auth.User', on_delete=models.CASCADE)
+    autor = models.CharField(max_length=200)
     data = models.DateField(default=timezone.now)
     firma = models.CharField(max_length=200)
     nazwa = models.CharField(max_length=200)
@@ -189,7 +189,7 @@ class Wino(models.Model):
         (RÓŻOWE, 'różowe'),
     ]
 
-    autor = models.ForeignKey('auth.User', on_delete=models.CASCADE)
+    autor = models.CharField(max_length=200)
     data = models.DateField(default=timezone.now)
     firma = models.CharField(max_length=200)
     nazwa = models.CharField(max_length=200)
@@ -261,7 +261,7 @@ class Kawa(models.Model):
 
     SKŁAD = [(i,i) for i in range(101)]
 
-    autor = models.ForeignKey('auth.User', on_delete=models.CASCADE)
+    autor = models.CharField(max_length=200)
     data = models.DateField(default=timezone.now)
     firma = models.CharField(max_length=200)
     nazwa = models.CharField(max_length=200)
