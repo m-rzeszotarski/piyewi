@@ -1,8 +1,8 @@
 {% extends 'strona/base.html' %}
 
 {% block content %}
-            <a href="{% url 'piwo_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
-            <h1>Lista Piw</h1>
+    <h1>Lista Piw<br/><small><a href="{% url 'piwo_new' %}"><small><span class="glyphicon glyphicon-plus"></span></small> Dodaj nową recencję</small></a></h1>
+    <br/>
     {% for piwo in piwos %}
         <div class="strona">
             <h3><a href="{% url 'piwo_detail' pk=piwo.pk %}">{{ piwo.firma }}: {{ piwo.nazwa }}</a></h3>

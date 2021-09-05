@@ -1,8 +1,8 @@
 {% extends 'strona/base.html' %}
 
 {% block content %}
-            <a href="{% url 'wino_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
-            <h1>Lista Win</h1>
+    <h1>Lista Win<br/><small><a href="{% url 'wino_new' %}"><small><span class="glyphicon glyphicon-plus"></span></small> Dodaj nową recencję</small></a></h1>
+    <br/>
     {% for wino in winos %}
         <div class="strona">
             <h3><a href="{% url 'wino_detail' pk=wino.pk %}">{{ wino.firma }}: {{ wino.nazwa }}</a></h3>

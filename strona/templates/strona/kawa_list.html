@@ -1,8 +1,8 @@
 {% extends 'strona/base.html' %}
 
 {% block content %}
-            <a href="{% url 'kawa_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
-            <h1>Lista Kaw</h1>
+    <h1>Lista Kaw<br/><small><a href="{% url 'kawa_new' %}"><small><span class="glyphicon glyphicon-plus"></span></small> Dodaj nową recencję</small></a></h1>
+    <br/>
     {% for kawa in kawas %}
         <div class="strona">
             <h3><a href="{% url 'kawa_detail' pk=kawa.pk %}">{{ kawa.firma }}: {{ kawa.nazwa }}</a></h3>
