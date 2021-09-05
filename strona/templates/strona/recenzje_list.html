@@ -1,0 +1,79 @@
+{% extends 'strona/base.html' %}
+
+{% block content %}
+    {% for kawa in kawas %}
+        {% if not kawa.zatwierdzony %}
+            <div class="strona">
+                <a class="btn btn-default" href="{% url 'kawa_remove' pk=kawa.pk %}"><span class="glyphicon glyphicon-remove"></span></a>
+                <a class="btn btn-default" href="{% url 'kawa_zatwierdzenie' pk=kawa.pk %}"><span class="glyphicon glyphicon-ok"></span></a>
+                <h3><a href="{% url 'kawa_detail' pk=kawa.pk %}">Kawa: {{ kawa.firma }}: {{ kawa.nazwa }}</a></h3>
+                <p>Arabica [%]: {{ kawa.arabica }}</p>
+                <p>Robusta [%]: {{ kawa.robusta }}</p>
+                <p>Stopień Palenia: {{ kawa.stopień_palenia }}</p>
+                <p>Kwasowość: {{ kawa.kwasowość }}</p>
+                <p>Moc: {{ kawa.moc }}</p>
+                <p>Ocena: {{ kawa.ocena }}</p>
+                <p>Uwagi: {{ kawa.uwagi }}</p>
+                <br/>
+            </div>   
+        {% endif %}
+    {% endfor %}
+    {% for piwo in piwos %}
+        {% if not piwo.zatwierdzony %}
+            <div class="strona">
+                <a class="btn btn-default" href="{% url 'piwo_remove' pk=piwo.pk %}"><span class="glyphicon glyphicon-remove"></span></a>
+                <a class="btn btn-default" href="{% url 'piwo_zatwierdzenie' pk=piwo.pk %}"><span class="glyphicon glyphicon-ok"></span></a>
+                <h3><a href="{% url 'piwo_detail' pk=piwo.pk %}">Piwo: {{ piwo.firma }}: {{ piwo.nazwa }}</a></h3>
+                <p>Typ: {{ piwo.typ }}</p>
+                <p>Aromat: {{ piwo.aromat }}</p>
+                <p>Smak: {{ piwo.smak }}</p>
+                <p>Moc: {{ piwo.moc }}</p>
+                <p>Goryczka: {{ piwo.goryczka }}</p>
+                <p>Nuty owocowe: {{ piwo.nuty_owocowe }}</p>
+                <p>Piana: {{ piwo.piana }}</p>
+                <p>Kolor: {{piwo.kolor }}</p>
+                <p>Mętność: {{piwo.mętność }}</p>
+                <p>Zgazowanie: {{ piwo.zgazowanie }}</p>
+                <p>Ocena: {{ piwo.ocena }}</p>
+                <p>Uwagi: {{ piwo.uwagi }}</p>
+                <br/>
+            </div>  
+        {% endif %}
+    {% endfor %}
+    {% for wino in winos %}
+        {% if not wino.zatwierdzony %}
+            <div class="strona">
+                <a class="btn btn-default" href="{% url 'wino_remove' pk=wino.pk %}"><span class="glyphicon glyphicon-remove"></span></a>
+                <a class="btn btn-default" href="{% url 'wino_zatwierdzenie' pk=wino.pk %}"><span class="glyphicon glyphicon-ok"></span></a>
+                <h3><a href="{% url 'wino_detail' pk=wino.pk %}">Wino: {{ wino.firma }}: {{ wino.nazwa }}</a></h3>
+                <p>Typ: {{ wino.typ }}</p>
+                <p>Kolor: {{ wino.kolor }}</p>
+                <p>Klarowność: {{ wino.klarowność }}</p>
+                <p>Musowanie: {{ wino.musowanie }}</p>
+                <p>Aromat: {{ wino.aromat }}</p>
+                <p>Moc: {{ wino.moc }}</p>
+                <p>Nuty owocowe: {{ wino.nuty_owocowe }}</p>
+                <p>Ocena: {{ wino.ocena }}</p>
+                <p>Uwagi: {{ wino.uwagi }}</p>
+                <br/>
+            </div>   
+        {% endif %}
+    {% endfor %}  
+    {% for yerba in yerbas %}
+        {% if not yerba.zatwierdzony %}
+            <div class="strona">
+                <a class="btn btn-default" href="{% url 'yerba_remove' pk=yerba.pk %}"><span class="glyphicon glyphicon-remove"></span></a>
+                <a class="btn btn-default" href="{% url 'yerba_zatwierdzenie' pk=yerba.pk %}"><span class="glyphicon glyphicon-ok"></span></a>
+                <h3><a href="{% url 'yerba_detail' pk=yerba.pk %}">Yerba: {{ yerba.firma }}: {{ yerba.nazwa }}</a></h3>
+                <p>Zapylenie: {{ yerba.zapylenie }}</p>
+                <p>Aromat: {{ yerba.aromat }}</p>
+                <p>Moc: {{ yerba.moc }}</p>
+                <p>Goryczka: {{ yerba.goryczka }}</p>
+                <p>Nuty owocowe: {{ yerba.nuty_owocowe }}</p>
+                <p>Ocena: {{ yerba.ocena }}</p>
+                <p>Uwagi: {{ yerba.uwagi }}</p>
+                <br/>
+            </div>  
+        {% endif %} 
+    {% endfor %}
+{% endblock %}

@@ -4,22 +4,24 @@
     <h1>Lista Piw<br/><small><a href="{% url 'piwo_new' %}"><small><span class="glyphicon glyphicon-plus"></span></small> Dodaj nową recencję</small></a></h1>
     <br/>
     {% for piwo in piwos %}
-        <div class="strona">
-            <h3><a href="{% url 'piwo_detail' pk=piwo.pk %}">{{ piwo.firma }}: {{ piwo.nazwa }}</a></h3>
-            <p>Typ: {{ piwo.typ }}</p>
-            <p>Aromat: {{ piwo.aromat }}</p>
-            <p>Smak: {{ piwo.smak }}</p>
-            <p>Moc: {{ piwo.moc }}</p>
-            <p>Goryczka: {{ piwo.goryczka }}</p>
-            <p>Nuty owocowe: {{ piwo.nuty_owocowe }}</p>
-            <p>Piana: {{ piwo.piana }}</p>
-            <p>Kolor: {{piwo.kolor }}</p>
-            <p>Mętność: {{piwo.mętność }}</p>
-            <p>Zgazowanie: {{ piwo.zgazowanie }}</p>
-            <p>Ocena: {{ piwo.ocena }}</p>
-            <p>Uwagi: {{ piwo.uwagi }}</p>
-            <br/>
-        </div>   
+        {% if piwo.zatwierdzony %}
+            <div class="strona">
+                <h3><a href="{% url 'piwo_detail' pk=piwo.pk %}">{{ piwo.firma }}: {{ piwo.nazwa }}</a></h3>
+                <p>Typ: {{ piwo.typ }}</p>
+                <p>Aromat: {{ piwo.aromat }}</p>
+                <p>Smak: {{ piwo.smak }}</p>
+                <p>Moc: {{ piwo.moc }}</p>
+                <p>Goryczka: {{ piwo.goryczka }}</p>
+                <p>Nuty owocowe: {{ piwo.nuty_owocowe }}</p>
+                <p>Piana: {{ piwo.piana }}</p>
+                <p>Kolor: {{piwo.kolor }}</p>
+                <p>Mętność: {{piwo.mętność }}</p>
+                <p>Zgazowanie: {{ piwo.zgazowanie }}</p>
+                <p>Ocena: {{ piwo.ocena }}</p>
+                <p>Uwagi: {{ piwo.uwagi }}</p>
+                <br/>
+            </div>  
+        {% endif %}
     {% endfor %}
 </div>
 {% endblock %}

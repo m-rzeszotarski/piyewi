@@ -49,6 +49,12 @@ def yerba_remove(request, pk):
     yerba.delete()
     return redirect('yerba_list')
 
+@login_required
+def yerba_zatwierdzenie(request, pk):
+    yerba = get_object_or_404(Yerba, pk=pk)
+    yerba.zatwierdzenie()
+    return redirect('recenzje_list')
+
 ##piwo
 
 def piwo_list(request):
@@ -90,6 +96,12 @@ def piwo_remove(request, pk):
     piwo = get_object_or_404(Piwo, pk=pk)
     piwo.delete()
     return redirect('piwo_list')
+
+@login_required
+def piwo_zatwierdzenie(request, pk):
+    piwo = get_object_or_404(Piwo, pk=pk)
+    piwo.zatwierdzenie()
+    return redirect('recenzje_list')
 
 ## wino
 
@@ -133,6 +145,12 @@ def wino_remove(request, pk):
     wino.delete()
     return redirect('wino_list')
 
+@login_required
+def wino_zatwierdzenie(request, pk):
+    wino = get_object_or_404(Wino, pk=pk)
+    wino.zatwierdzenie()
+    return redirect('recenzje_list')
+
 ## kawa
 
 def kawa_list(request):
@@ -174,3 +192,20 @@ def kawa_remove(request, pk):
     kawa = get_object_or_404(Kawa, pk=pk)
     kawa.delete()
     return redirect('kawa_list')
+
+@login_required
+def kawa_zatwierdzenie(request, pk):
+    kawa = get_object_or_404(Kawa, pk=pk)
+    kawa.zatwierdzenie()
+    return redirect('recenzje_list')
+
+## panel recenzji
+
+@login_required
+def recenzje_list(request):
+    yerbas = Yerba.objects.all()
+    piwos = Piwo.objects.all()
+    winos = Wino.objects.all()
+    kawas = Kawa.objects.all()
+
+    return render(request, 'strona/recenzje_list.html', {'yerbas' : yerbas, 'piwos' : piwos, 'winos' : winos, 'kawas': kawas})

@@ -58,6 +58,11 @@ class Yerba(models.Model):
         default=0
     )
     uwagi = models.TextField(blank=True, null=True)
+    zatwierdzony = models.BooleanField(default=False)
+
+    def zatwierdzenie(self):
+        self.zatwierdzony = True
+        self.save()
 
     def __str__(self):
         return self.nazwa
@@ -149,6 +154,12 @@ class Piwo(models.Model):
     )
     uwagi = models.TextField(blank=True, null=True)
 
+    zatwierdzony = models.BooleanField(default=False)
+
+    def zatwierdzenie(self):
+        self.zatwierdzony = True
+        self.save()
+
     def __str__(self):
         return self.nazwa
 
@@ -228,6 +239,12 @@ class Wino(models.Model):
     )
     uwagi = models.TextField(blank=True, null=True)
 
+    zatwierdzony = models.BooleanField(default=False)
+
+    def zatwierdzenie(self):
+        self.zatwierdzony = True
+        self.save()
+
     def __str__(self):
         return self.nazwa
 
@@ -290,6 +307,12 @@ class Kawa(models.Model):
         default=0
     )
     uwagi = models.TextField(blank=True, null=True)
+
+    zatwierdzony = models.BooleanField(default=False)
+
+    def zatwierdzenie(self):
+        self.zatwierdzony = True
+        self.save()
 
     def __str__(self):
         return self.nazwa
