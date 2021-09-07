@@ -53,6 +53,10 @@ class Yerba(models.Model):
         choices=NUMERY,
         default=0
     )
+    trwałość = models.FloatField(
+        choices=NUMERY,
+        default=0
+    )
     ocena = models.FloatField(
         choices=NUMERY,
         default=0
@@ -113,10 +117,6 @@ class Piwo(models.Model):
         default=JASNE,
     )
     aromat = models.FloatField(
-        choices=NUMERY,
-        default=0
-    )
-    smak = models.FloatField(
         choices=NUMERY,
         default=0
     )

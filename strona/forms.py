@@ -5,7 +5,7 @@ class YerbaForm(forms.ModelForm):
 
     class Meta:
         model = Yerba
-        fields = ('autor', 'firma', 'nazwa', 'zapylenie', 'aromat', 'moc', 'goryczka', 'nuty_owocowe', 'ocena', 'uwagi',)
+        fields = ('autor', 'firma', 'nazwa', 'zapylenie', 'aromat', 'moc', 'goryczka', 'nuty_owocowe', 'trwałość', 'ocena', 'uwagi',)
         labels = {
             'autor' : "Twój nick",
         }
@@ -14,7 +14,7 @@ class PiwoForm(forms.ModelForm):
 
     class Meta:
         model = Piwo
-        fields = ('autor', 'firma', 'nazwa', 'typ', 'aromat', 'smak', 'moc', 'goryczka', 'nuty_owocowe', 'piana', 'kolor', 'mętność', 'zgazowanie', 'ocena', 'uwagi',)
+        fields = ('autor', 'firma', 'nazwa', 'typ', 'aromat', 'moc', 'goryczka', 'nuty_owocowe', 'piana', 'kolor', 'mętność', 'zgazowanie', 'ocena', 'uwagi',)
         labels = {
             'autor' : "Twój nick",
         }
