@@ -1,5 +1,4 @@
 from django.urls import path
-from django.conf.urls import url
 from . import views 
 
 urlpatterns = [
@@ -29,5 +28,4 @@ urlpatterns = [
     path('kawa/<int:pk>/remove/', views.kawa_remove, name='kawa_remove'),
     path('kawa/<int:pk>/zatwierdzenie/', views.kawa_zatwierdzenie, name='kawa_zatwierdzenie'),
     path('recenze_list', views.recenzje_list, name='recenzje_list'),
-    url(r'^$', views.index, name='index'),
 ]

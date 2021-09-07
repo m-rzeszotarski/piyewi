@@ -3,22 +3,39 @@
 {% block content %}
     <h1>Lista Win<br/><small><a href="{% url 'wino_new' %}"><small><span class="glyphicon glyphicon-plus"></span></small> Dodaj nową recencję</small></a></h1>
     <br/>
-    {% for wino in winos %}
-        {% if wino.zatwierdzony %}
-            <div class="strona">
-                <h3><a href="{% url 'wino_detail' pk=wino.pk %}">{{ wino.firma }}: {{ wino.nazwa }}</a></h3>
-                <p>Typ: {{ wino.typ }}</p>
-                <p>Kolor: {{ wino.kolor }}</p>
-                <p>Klarowność: {{ wino.klarowność }}</p>
-                <p>Musowanie: {{ wino.musowanie }}</p>
-                <p>Aromat: {{ wino.aromat }}</p>
-                <p>Moc: {{ wino.moc }}</p>
-                <p>Nuty owocowe: {{ wino.nuty_owocowe }}</p>
-                <p>Ocena: {{ wino.ocena }}</p>
-                <p>Uwagi: {{ wino.uwagi }}</p>
-                <br/>
-            </div>   
-        {% endif %}
-    {% endfor %}
-</div>
+    <table id = "table" class = "table table-bordered">
+        <thead class = "alert-success">
+            <tr>
+                <th>Winnica</th>
+                <th>Nazwa</th>
+                <th>Typ</th>
+                <th>Kolor</th>
+                <th>Klarowność</th>
+                <th>Musowanie</th>
+                <th>Aromat</th>
+                <th>Moc</th>
+                <th>Nuty owocowe</th>
+                <th>Ocena</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for wino in winos %}
+                {% if wino.zatwierdzony %}
+                    <tr>
+                        <td>{{ wino.firma }}</td>
+                        <td><a href="{% url 'wino_detail' pk=wino.pk %}">{{ wino.nazwa }}</a></td>
+                        <td>{{ wino.typ }}</td>
+                        <td>{{ wino.kolor }}</td>
+                        <td>{{ wino.klarowność }}</td>
+                        <td>{{ wino.musowanie }}</td>
+                        <td>{{ wino.aromat }}</td>
+                        <td>{{ wino.moc }}</td>
+                        <td>{{ wino.nuty_owocowe }}</td>
+                        <td>{{ wino.ocena }}</td>
+                    </tr>
+                {% endif %}
+            {% endfor %}
+        </tbody>
+    </table>
+
 {% endblock %}

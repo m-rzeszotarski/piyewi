@@ -14,7 +14,6 @@
                 <th>Goryczka</th>
                 <th>Nuty owocowe</th>
                 <th>Ocena</th>
-                <th>Uwagi</th>
             </tr>
         </thead>
         <tbody>
@@ -22,14 +21,13 @@
                 {% if yerba.zatwierdzony %}
                     <tr>
                         <td>{{ yerba.firma }}</td>
-                        <td>{{ yerba.nazwa }}</td>
+                        <td><a href="{% url 'yerba_detail' pk=yerba.pk %}">{{ yerba.nazwa }}</a></td>
                         <td>{{ yerba.zapylenie }}</td>
                         <td>{{ yerba.aromat }}</td>
                         <td>{{ yerba.moc }}</td>
                         <td>{{ yerba.goryczka }}</td>
                         <td>{{ yerba.nuty_owocowe }}</td>
                         <td>{{ yerba.ocena }}</td>
-                        <td>{{ yerba.uwagi }}</td>
                     </tr>
                 {% endif %}
             {% endfor %}

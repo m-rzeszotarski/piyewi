@@ -3,25 +3,45 @@
 {% block content %}
     <h1>Lista Piw<br/><small><a href="{% url 'piwo_new' %}"><small><span class="glyphicon glyphicon-plus"></span></small> Dodaj nową recencję</small></a></h1>
     <br/>
-    {% for piwo in piwos %}
-        {% if piwo.zatwierdzony %}
-            <div class="strona">
-                <h3><a href="{% url 'piwo_detail' pk=piwo.pk %}">{{ piwo.firma }}: {{ piwo.nazwa }}</a></h3>
-                <p>Typ: {{ piwo.typ }}</p>
-                <p>Aromat: {{ piwo.aromat }}</p>
-                <p>Smak: {{ piwo.smak }}</p>
-                <p>Moc: {{ piwo.moc }}</p>
-                <p>Goryczka: {{ piwo.goryczka }}</p>
-                <p>Nuty owocowe: {{ piwo.nuty_owocowe }}</p>
-                <p>Piana: {{ piwo.piana }}</p>
-                <p>Kolor: {{piwo.kolor }}</p>
-                <p>Mętność: {{piwo.mętność }}</p>
-                <p>Zgazowanie: {{ piwo.zgazowanie }}</p>
-                <p>Ocena: {{ piwo.ocena }}</p>
-                <p>Uwagi: {{ piwo.uwagi }}</p>
-                <br/>
-            </div>  
-        {% endif %}
-    {% endfor %}
-</div>
+    <table id = "table" class = "table table-bordered">
+        <thead class = "alert-success">
+            <tr>
+                <th>Browar</th>
+                <th>Nazwa</th>
+                <th>Typ</th>
+                <th>Aromat</th>
+                <th>Smak</th>
+                <th>Moc</th>
+                <th>Goryczka</th>
+                <th>Nuty owocowe</th>
+                <th>Piana</th>
+                <th>Kolor</th>
+                <th>Mętność</th>
+                <th>Zgazowanie</th>
+                <th>Ocena</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for piwo in piwos %}
+                {% if piwo.zatwierdzony %}
+                    <tr>
+                        <td>{{ piwo.firma }}</td>
+                        <td><a href="{% url 'piwo_detail' pk=piwo.pk %}">{{ piwo.nazwa }}</a></td>
+                        <td>{{ piwo.typ }}</td>
+                        <td>{{ piwo.aromat }}</td>
+                        <td>{{ piwo.smak }}</td>
+                        <td>{{ piwo.moc }}</td>
+                        <td>{{ piwo.goryczka }}</td>
+                        <td>{{ piwo.nuty_owocowe }}</td>
+                        <td>{{ piwo.piana }}</td>
+                        <td>{{ piwo.kolor }}</td>
+                        <td>{{ piwo.mętność }}</td>
+                        <td>{{ piwo.zgazowanie }}</td>
+                        <td>{{ piwo.ocena }}</td>
+                    </tr>
+                {% endif %}
+            {% endfor %}
+        </tbody>
+    </table>
+
 {% endblock %}

@@ -3,20 +3,35 @@
 {% block content %}
     <h1>Lista Kaw<br/><small><a href="{% url 'kawa_new' %}"><small><span class="glyphicon glyphicon-plus"></span></small> Dodaj nową recencję</small></a></h1>
     <br/>
-    {% for kawa in kawas %}
-        {% if kawa.zatwierdzony %}
-            <div class="strona">
-                <h3><a href="{% url 'kawa_detail' pk=kawa.pk %}">{{ kawa.firma }}: {{ kawa.nazwa }}</a></h3>
-                <p>Arabica [%]: {{ kawa.arabica }}</p>
-                <p>Robusta [%]: {{ kawa.robusta }}</p>
-                <p>Stopień Palenia: {{ kawa.stopień_palenia }}</p>
-                <p>Kwasowość: {{ kawa.kwasowość }}</p>
-                <p>Moc: {{ kawa.moc }}</p>
-                <p>Ocena: {{ kawa.ocena }}</p>
-                <p>Uwagi: {{ kawa.uwagi }}</p>
-                <br/>
-            </div>   
-        {% endif %}
-    {% endfor %}
-</div>
+    <table id = "table" class = "table table-bordered">
+        <thead class = "alert-success">
+            <tr>
+                <th>Palarnia</th>
+                <th>Nazwa</th>
+                <th>Arabica [%]</th>
+                <th>Robusta [%]</th>
+                <th>Stopień palenia</th>
+                <th>Kwasowość</th>
+                <th>Moc</th>
+                <th>Ocena</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for kawa in kawas %}
+                {% if kawa.zatwierdzony %}
+                    <tr>
+                        <td>{{ kawa.firma }}</td>
+                        <td><a href="{% url 'kawa_detail' pk=kawa.pk %}">{{ kawa.nazwa }}</a></td>
+                        <td>{{ kawa.arabica }}</td>
+                        <td>{{ kawa.robusta }}</td>
+                        <td>{{ kawa.stopień_palenia }}</td>
+                        <td>{{ kawa.kwasowość }}</td>
+                        <td>{{ kawa.moc }}</td>
+                        <td>{{ kawa.ocena }}</td>
+                    </tr>
+                {% endif %}
+            {% endfor %}
+        </tbody>
+    </table>
+
 {% endblock %}

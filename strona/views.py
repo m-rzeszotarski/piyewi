@@ -209,12 +209,3 @@ def recenzje_list(request):
     kawas = Kawa.objects.all()
 
     return render(request, 'strona/recenzje_list.html', {'yerbas' : yerbas, 'piwos' : piwos, 'winos' : winos, 'kawas': kawas})
-
-## table
-
-def index(request):
-    all_Yerba = Yerba.objects.all()
-    all_Piwo = Piwo.objects.all() 
-    all_Wino = Wino.objects.all() 
-    all_Kawa = Kawa.objects.all()
-    return render(request, 'table/index.html', {'all_Yerba' : all_Yerba, 'all_Piwo' : all_Piwo, 'all_Wino' : all_Wino, 'all_Kawa' : all_Kawa})
