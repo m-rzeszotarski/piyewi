@@ -11,7 +11,9 @@
     <body>
         <div class='page-header'>
             {% if user.is_authenticated %}
-                <p class="top-menu">Witaj {{ user.username }} <small>(<a href="{% url 'logout' %}">Wyloguj</a>)</small></p>
+                <div class="top-menu">
+                    <p style="font-family:'Lobster'">Witaj {{ user.username }} <small>(<a href="{% url 'logout' %}">Wyloguj</a>)</small></p>
+                </div>
             {% else %} 
                 <a href="{% url 'login' %}" class="top-menu"><span class="glyphicon glyphicon-lock"></span></a>
             {% endif %}
@@ -29,7 +31,28 @@
         <script type="text/javascript" src="https://cdn.datatables.net/v/dt/jq-3.3.1/dt-1.11.1/datatables.min.js"></script>
         <script type = "text/javascript">
             $(document).ready(function(){
-                $('#table').DataTable();
+                $('#table').DataTable( {
+                    "language": {
+                        "decimal":        "",
+                        "emptyTable":     "Brak danych w tabeli",
+                        "info":           "Wyświetlono od _START_ do _END_ z _TOTAL_ wyników",
+                        "infoEmpty":      "Wyświetlono od 0 do 0 z 0 wyników",
+                        "infoFiltered":   "(z _MAX_ wyników w bazie)",
+                        "infoPostFix":    "",
+                        "thousands":      ",",
+                        "lengthMenu":     "Pokaż _MENU_ wyników",
+                        "loadingRecords": "Ładowanie...",
+                        "processing":     "Procesowanie...",
+                        "search":         "Szukaj:",
+                        "zeroRecords":    "Nie znaleziono pasujących elementów.",
+                        "paginate": {
+                            "first":      "Pierwsza",
+                            "last":       "Ostatnia",
+                            "next":       "Następna",
+                            "previous":   "Poprzednia"
+                        }
+                    }
+                });
             });
         </script>
 </html>
