@@ -200,6 +200,13 @@ class Wino(models.Model):
         (RÓŻOWE, 'różowe'),
     ]
 
+    TAK = 'tak'
+    NIE = 'nie'
+    TAKNIE = [
+        (TAK, 'tak'),
+        (NIE, 'nie'),
+    ]
+
     autor = models.CharField(max_length=200)
     data = models.DateField(default=timezone.now)
     firma = models.CharField(max_length=200)
@@ -228,6 +235,86 @@ class Wino(models.Model):
     moc = models.FloatField(
         choices=NUMERY,
         default=0
+    )
+    nuty_zielonych_owoców = models.CharField(
+        max_length=32,
+        choices = TAKNIE,
+        default=NIE
+    )
+    nuty_czerwonych_owoców = models.CharField(
+        max_length=32,
+        choices = TAKNIE,
+        default=NIE
+    )
+    nuty_czarnych_owoców = models.CharField(
+        max_length=32,
+        choices = TAKNIE,
+        default=NIE
+    )
+    nuty_cytrusowe = models.CharField(
+        max_length=32,
+        choices = TAKNIE,
+        default=NIE
+    )
+    nuty_tropikalne = models.CharField(
+        max_length=32,
+        choices = TAKNIE,
+        default=NIE
+    )
+    nuty_pestkowców = models.CharField(
+        max_length=32,
+        choices=TAKNIE,
+        default=NIE
+    )
+    nuty_suszonych_owoców = models.CharField(
+        max_length=32,
+        choices = TAKNIE,
+        default=NIE
+    )
+    nuty_roślinne = models.CharField(
+        max_length=32,
+        choices = TAKNIE,
+        default=NIE
+    )
+    nuty_kwiatowe = models.CharField(
+        max_length=32,
+        choices = TAKNIE,
+        default=NIE
+    )
+    nuty_drożdżowe = models.CharField(
+        max_length=32,
+        choices = TAKNIE,
+        default=NIE
+    )
+    nuty_dojrzewające = models.CharField(
+        max_length=32,
+        choices = TAKNIE,
+        default=NIE
+    )
+    nuty_przypraw = models.CharField(
+        max_length=32,
+        choices = TAKNIE,
+        default=NIE
+    )
+    nuty_maślane = models.CharField(
+        max_length=32,
+        choices = TAKNIE,
+        default=NIE
+    )
+    nuty_dębowe = models.CharField(
+        max_length=32,
+        choices = TAKNIE,
+        default=NIE
+    )
+    nuty_ziemne = models.CharField(
+        max_length=32,
+        choices = TAKNIE,
+        default=NIE
+    )
+    nuty_minerałów = models.CharField(
+        max_length=32,
+        choices = TAKNIE,
+        default=NIE
     )
     ocena = models.FloatField(
         choices=NUMERY,

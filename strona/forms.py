@@ -23,16 +23,60 @@ class WinoForm(forms.ModelForm):
 
     class Meta:
         model = Wino
-        fields = ('autor', 'firma', 'nazwa', 'typ', 'kolor', 'klarowność', 'musowanie', 'aromat', 'moc', 'ocena', 'uwagi')
+        fields = (
+            'autor',
+            'firma',
+            'nazwa',
+            'typ',
+            'kolor',
+            'klarowność',
+            'musowanie',
+            'aromat',
+            'moc',
+            'nuty_zielonych_owoców',
+            'nuty_czerwonych_owoców',
+            'nuty_czarnych_owoców',
+            'nuty_cytrusowe',
+            'nuty_tropikalne',
+            'nuty_pestkowców',
+            'nuty_suszonych_owoców',
+            'nuty_roślinne',
+            'nuty_kwiatowe',
+            'nuty_drożdżowe',
+            'nuty_dojrzewające',
+            'nuty_przypraw',
+            'nuty_maślane',
+            'nuty_dębowe',
+            'nuty_ziemne',
+            'nuty_minerałów',
+            'ocena',
+            'uwagi'
+            )
         labels = {
             'autor' : "Twój nick",
+            'nuty_zielonych_owoców' : "Czy wyczuwasz nuty zielonych owoców? (np. jabłko, gruszka, agrest)",
+            'nuty_czerwonych_owoców' : "Czy wyczuwasz nuty czerwonych owoców? (np. truskawka, wiśnia, malina, granat)",
+            'nuty_czarnych_owoców' : "Czy wyczuwasz nuty czarnych owoców? (np. czarna porzeczka, czarna wisnia",
+            'nuty_cytrusowe' : "Czy wyczuwasz nuty cytrusowe? (np. cytryna, limonka, grejpfrut, pomarańcz)",
+            'nuty_tropikalne' : "Czy wyczuwasz nuty owoców tropikalnych? (np. ananas, papaja, marakuja)",
+            'nuty_pestkowców' : "Czy wyczuwasz nuty pestkowców? (np. śliwka, morela, brzoskwinia)",
+            'nuty_suszonych_owoców' : "Czy wyczuwasz nuty suszonych owoców?",
+            'nuty_roślinne' : "Czy wyczuwasz nuty roślinne? (np. zielona papryka, szparagi, świeżo skoszona trawa lub zioła takie jak rozmaryn, szałwia i tymianek)",
+            'nuty_kwiatowe' : "Czy wyczuwasz nuty kwiatowe? (np. kwiaty, perfumy)",
+            'nuty_drożdżowe' : "Czy wyczuwasz nuty drożdżowe? (np. ser, drożdże, banany)",
+            'nuty_dojrzewające' : "Czy wyczuwasz nuty dojrzewające? (np. migdały, chleb, tost)",
+            'nuty_przypraw' : "Czy wyczuwasz nuty przypraw? (np. pieprz, cynamon, goździk, gałka muszkatałowa)",
+            'nuty_maślane' : "Czy wyczuwasz nuty maślane? (np. mleko, masło)",
+            'nuty_dębowe' : "Czy wyczuwasz nuty (np. czekolada, wanilia, dąb, tytoń, dym)",
+            'nuty_ziemne' : "Czy wyczuwasz nuty ziemne? (np. ziemia, grzyby, trufle, skóra)",
+            'nuty_minerałów' : "Czy wyczuwasz nuty (np. sól, kamień)",
         }
 
 class KawaForm(forms.ModelForm):
 
     class Meta:
         model = Kawa
-        fields = ('autor', 'firma', 'nazwa', 'arabica', 'stopień_palenia', 'kwasowość', 'moc', 'ocena', 'uwagi')
+        fields = ('autor', 'firma', 'nazwa', 'arabica', 'stopień_palenia', 'kwasowość', 'moc',  'ocena', 'uwagi')
         labels = {
             'arabica' : "Arabica [%]",
             'autor' : "Twój nick",
