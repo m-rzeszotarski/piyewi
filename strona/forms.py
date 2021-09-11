@@ -53,6 +53,8 @@ class WinoForm(forms.ModelForm):
             )
         labels = {
             'autor' : "Twój nick",
+            'aromat' : "Aromat (intensywność)",
+            'kolor' : "Kolor (jak bardzo ciemne)",
             'nuty_zielonych_owoców' : "Czy wyczuwasz nuty zielonych owoców? (np. jabłko, gruszka, agrest)",
             'nuty_czerwonych_owoców' : "Czy wyczuwasz nuty czerwonych owoców? (np. truskawka, wiśnia, malina, granat)",
             'nuty_czarnych_owoców' : "Czy wyczuwasz nuty czarnych owoców? (np. czarna porzeczka, czarna wisnia, jeżyna",
