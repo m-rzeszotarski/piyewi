@@ -23,7 +23,7 @@ class WinoForm(forms.ModelForm):
 
     class Meta:
         model = Wino
-        fields = ('autor', 'firma', 'nazwa', 'typ', 'kolor', 'klarowność', 'musowanie', 'aromat', 'moc', 'nuty_owocowe', 'ocena', 'uwagi')
+        fields = ('autor', 'firma', 'nazwa', 'typ', 'kolor', 'klarowność', 'musowanie', 'aromat', 'moc', 'ocena', 'uwagi')
         labels = {
             'autor' : "Twój nick",
         }

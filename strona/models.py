@@ -229,10 +229,6 @@ class Wino(models.Model):
         choices=NUMERY,
         default=0
     )
-    nuty_owocowe = models.FloatField(
-        choices=NUMERY,
-        default=0
-    )
     ocena = models.FloatField(
         choices=NUMERY,
         default=0
