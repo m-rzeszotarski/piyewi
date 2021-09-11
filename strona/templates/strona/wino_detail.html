@@ -52,14 +52,11 @@
         {% if wino.nuty_dojrzewające == "tak" %}
             <p>- nuty dojrzewajace</p>
         {% endif %}
-        {% if wino.nuty_przypraw == "tak" %}
-            <p>- nuty przypraw</p>
-        {% endif %}
         {% if wino.nuty_maślane == "tak" %}
             <p>- nuty maślane</p>
         {% endif %}
         {% if wino.nuty_dębowe == "tak" %}
-            <p>- nuty dębowe</p>
+            <p>- nuty dębowe/ przypraw</p>
         {% endif %}
         {% if wino.nuty_ziemne == "tak" %}
             <p>- nuty ziemne</p>
@@ -70,5 +67,6 @@
         <p>Ocena: {{ wino.ocena }}</p>
         <p>Uwagi: {{ wino.uwagi }}</p>
         <br/>
+        <p>Nie wiesz co oznaczają niektóre nuty? <a href="{% url 'wino_opis_nut' %}">Dowiedz się tutaj!</a></p>
     </div>   
 {% endblock %}

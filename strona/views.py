@@ -151,6 +151,9 @@ def wino_zatwierdzenie(request, pk):
     wino.zatwierdzenie()
     return redirect('recenzje_list')
 
+def wino_opis_nut(request):
+    return render(request, 'strona/wino_opis_nut.html')
+
 ## kawa
 
 def kawa_list(request):

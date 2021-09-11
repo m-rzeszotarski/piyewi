@@ -291,11 +291,6 @@ class Wino(models.Model):
         choices = TAKNIE,
         default=NIE
     )
-    nuty_przypraw = models.CharField(
-        max_length=32,
-        choices = TAKNIE,
-        default=NIE
-    )
     nuty_maślane = models.CharField(
         max_length=32,
         choices = TAKNIE,
