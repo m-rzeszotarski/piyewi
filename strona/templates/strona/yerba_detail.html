@@ -12,14 +12,14 @@
             <a class="btn btn-default" href="{% url 'yerba_remove' pk=yerba.pk %}"><span class="glyphicon glyphicon-remove"></span></a>
         {% endif %}
         <h2>{{ yerba.firma }}: {{ yerba.nazwa }}</h2>
-        <p>Zapylenie: {{ yerba.zapylenie }}</p>
-        <p>Aromat: {{ yerba.aromat }}</p>
-        <p>Moc: {{ yerba.moc }}</p>
-        <p>Goryczka: {{ yerba.goryczka }}</p>
-        <p>Nuty owocowe: {{ yerba.nuty_owocowe }}</p>
-        <p>Trwałość: {{ yerba.trwałość }}</p>
-        <p>Ocena: {{ yerba.ocena }}</p>
-        <p>Uwagi: {{ yerba.uwagi }}</p>
+        <p><b>Zapylenie:</b> {{ yerba.zapylenie }}</p>
+        <p><b>Aromat:</b> {{ yerba.aromat }}</p>
+        <p><b>Moc:</b> {{ yerba.moc }}</p>
+        <p><b>Goryczka:</b> {{ yerba.goryczka }}</p>
+        <p><b>Nuty owocowe:</b> {{ yerba.nuty_owocowe }}</p>
+        <p><b>Trwałość:</b> {{ yerba.trwałość }}</p>
+        <p><b>Ocena:</b> {{ yerba.ocena }}</p>
+        <p><b>Uwagi:</b> {{ yerba.uwagi }}</p>
         <br/>
     </div>   
 {% endblock %}

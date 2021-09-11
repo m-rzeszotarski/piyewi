@@ -12,13 +12,13 @@
             <a class="btn btn-default" href="{% url 'kawa_remove' pk=kawa.pk %}"><span class="glyphicon glyphicon-remove"></span></a>
         {% endif %}
         <h2>{{ kawa.firma }}: {{ kawa.nazwa }}</h2>
-        <p>Arabica [%]: {{ kawa.arabica }}</p>
-        <p>Robusta [%]: {{ kawa.robusta }}</p>
-        <p>Stopień Palenia: {{ kawa.stopień_palenia }}</p>
-        <p>Kwasowość: {{ kawa.kwasowość }}</p>
-        <p>Moc: {{ kawa.moc }}</p>
-        <p>Ocena: {{ kawa.ocena }}</p>
-        <p>Uwagi: {{ kawa.uwagi }}</p>
+        <p><b>Arabica [%]:</b> {{ kawa.arabica }}</p>
+        <p><b>Robusta [%]:</b> {{ kawa.robusta }}</p>
+        <p><b>Stopień Palenia:</b> {{ kawa.stopień_palenia }}</p>
+        <p><b>Kwasowość:</b> {{ kawa.kwasowość }}</p>
+        <p><b>Moc:</b> {{ kawa.moc }}</p>
+        <p><b>Ocena:</b> {{ kawa.ocena }}</p>
+        <p><b>Uwagi:</b> {{ kawa.uwagi }}</p>
         <br/>
     </div>   
 {% endblock %}

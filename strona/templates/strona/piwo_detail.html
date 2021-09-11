@@ -12,18 +12,18 @@
             <a class="btn btn-default" href="{% url 'piwo_remove' pk=piwo.pk %}"><span class="glyphicon glyphicon-remove"></span></a>
         {% endif %}
         <h2>{{ piwo.firma }}: {{ piwo.nazwa }}</h2>
-        <p>Typ: {{ piwo.typ }}</p>
-        <p>Aromat: {{ piwo.aromat }}</p>
-        <p>Smak: {{ piwo.smak }}</p>
-        <p>Moc: {{ piwo.moc }}</p>
-        <p>Goryczka: {{ piwo.goryczka }}</p>
-        <p>Nuty owocowe: {{ piwo.nuty_owocowe }}</p>
-        <p>Piana: {{ piwo.piana }}</p>
-        <p>Kolor: {{piwo.kolor }}</p>
-        <p>Mętność: {{piwo.mętność }}</p>
-        <p>Zgazowanie: {{ piwo.zgazowanie }}</p>
-        <p>Ocena: {{ piwo.ocena }}</p>
-        <p>Uwagi: {{ piwo.uwagi }}</p>
+        <p><b>Typ:</b> {{ piwo.typ }}</p>
+        <p><b>Aromat:</b> {{ piwo.aromat }}</p>
+        <p><b>Smak:</b> {{ piwo.smak }}</p>
+        <p><b>Moc:</b> {{ piwo.moc }}</p>
+        <p><b>Goryczka:</b> {{ piwo.goryczka }}</p>
+        <p><b>Nuty owocowe:</b> {{ piwo.nuty_owocowe }}</p>
+        <p><b>Piana:</b> {{ piwo.piana }}</p>
+        <p><b>Kolor:</b> {{piwo.kolor }}</p>
+        <p><b>Mętność:</b> {{piwo.mętność }}</p>
+        <p><b>Zgazowanie:</b> {{ piwo.zgazowanie }}</p>
+        <p><b>Ocena:</b> {{ piwo.ocena }}</p>
+        <p><b>Uwagi:</b> {{ piwo.uwagi }}</p>
         <br/>
     </div>   
 {% endblock %}
