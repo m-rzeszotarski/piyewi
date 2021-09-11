@@ -18,6 +18,55 @@
         <p>Musowanie: {{ wino.musowanie }}</p>
         <p>Aromat: {{ wino.aromat }}</p>
         <p>Moc: {{ wino.moc }}</p>
+        <p>Wyczuwalne nuty:</p>
+        {% if wino.nuty_zielonych_owoców == "tak" %}
+            <p>- nuty zielonych owoców</p>
+        {% endif %}
+        {% if wino.nuty_czerwonych_owoców == "tak" %}
+            <p>- nuty czerwonych owoców</p>
+        {% endif %}
+        {% if wino.nuty_czarnych_owoców == "tak" %}
+            <p>- nuty czarnych owoców</p>
+        {% endif %}
+        {% if wino.nuty_cytrusowe == "tak" %}
+            <p>- nuty cytrusowe</p>
+        {% endif %}
+        {% if wino.nuty_tropikalne == "tak" %}
+            <p>- nuty owoców tropikalnych</p>
+        {% endif %}
+        {% if wino.nuty_pestkowców == "tak" %}
+            <p>- nuty pestkowców</p>
+        {% endif %}
+        {% if wino.nuty_suszonych_owoców == "tak" %}
+            <p>- nuty suszonych owoców</p>
+        {% endif %}
+        {% if wino.nuty_roślinne == "tak" %}
+            <p>- nuty roślinne</p>
+        {% endif %}
+        {% if wino.nuty_kwiatowe == "tak" %}
+            <p>- nuty kwiatowe</p>
+        {% endif %}
+        {% if wino.nuty_drożdżowe == "tak" %}
+            <p>- nuty drożdżowe</p>
+        {% endif %}
+        {% if wino.nuty_dojrzewające == "tak" %}
+            <p>- nuty dojrzewajace</p>
+        {% endif %}
+        {% if wino.nuty_przypraw == "tak" %}
+            <p>- nuty przypraw</p>
+        {% endif %}
+        {% if wino.nuty_maślane == "tak" %}
+            <p>- nuty maślane</p>
+        {% endif %}
+        {% if wino.nuty_dębowe == "tak" %}
+            <p>- nuty dębowe</p>
+        {% endif %}
+        {% if wino.nuty_ziemne == "tak" %}
+            <p>- nuty ziemne</p>
+        {% endif %}
+        {% if wino.nuty_minerałów == "tak" %}
+            <p>- nuty mineralne</p>
+        {% endif %}
         <p>Ocena: {{ wino.ocena }}</p>
         <p>Uwagi: {{ wino.uwagi }}</p>
         <br/>

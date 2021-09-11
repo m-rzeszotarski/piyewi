@@ -67,9 +67,9 @@ class WinoForm(forms.ModelForm):
             'nuty_dojrzewające' : "Czy wyczuwasz nuty dojrzewające? (np. migdały, chleb, tost)",
             'nuty_przypraw' : "Czy wyczuwasz nuty przypraw? (np. pieprz, cynamon, goździk, gałka muszkatałowa)",
             'nuty_maślane' : "Czy wyczuwasz nuty maślane? (np. mleko, masło)",
-            'nuty_dębowe' : "Czy wyczuwasz nuty (np. czekolada, wanilia, dąb, tytoń, dym)",
+            'nuty_dębowe' : "Czy wyczuwasz nuty dębowe? (np. czekolada, wanilia, dąb, tytoń, dym)",
             'nuty_ziemne' : "Czy wyczuwasz nuty ziemne? (np. ziemia, grzyby, trufle, skóra)",
-            'nuty_minerałów' : "Czy wyczuwasz nuty (np. sól, kamień)",
+            'nuty_minerałów' : "Czy wyczuwasz nuty mineralne? (np. sól, kamień)",
         }
 
 class KawaForm(forms.ModelForm):
