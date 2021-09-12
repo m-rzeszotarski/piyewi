@@ -12,6 +12,7 @@
             <a class="btn btn-default" href="{% url 'wino_remove' pk=wino.pk %}"><span class="glyphicon glyphicon-remove"></span></a>
         {% endif %}
         <h2>{{ wino.firma }}: {{ wino.nazwa }}</h2>
+        <p><b>Autor recenzji:</b> {{ wino.autor }}</p>
         <p><b>Typ:</b> {{ wino.typ }}</p>
         <p><b>Kolor (jak bardzo ciemne):</b> {{ wino.kolor }}</p>
         <p><b>Klarowność:</b> {{ wino.klarowność }}</p>
@@ -68,5 +69,7 @@
         <p><b>Uwagi:</b> {{ wino.uwagi }}</p>
         <br/>
         <p>Nie wiesz co oznaczają niektóre nuty? <a href="{% url 'wino_opis_nut' %}">Dowiedz się tutaj!</a></p>
+        <p><a href="{% url 'wino_list' %}">Powrót do listy win</a></p>
+        <br/>
     </div>   
 {% endblock %}

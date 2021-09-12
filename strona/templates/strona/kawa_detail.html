@@ -12,6 +12,7 @@
             <a class="btn btn-default" href="{% url 'kawa_remove' pk=kawa.pk %}"><span class="glyphicon glyphicon-remove"></span></a>
         {% endif %}
         <h2>{{ kawa.firma }}: {{ kawa.nazwa }}</h2>
+        <p><b>Autor recenzji:</b> {{ kawa.autor }}</p>
         <p><b>Arabica [%]:</b> {{ kawa.arabica }}</p>
         <p><b>Robusta [%]:</b> {{ kawa.robusta }}</p>
         <p><b>Stopień Palenia:</b> {{ kawa.stopień_palenia }}</p>
@@ -19,6 +20,8 @@
         <p><b>Moc:</b> {{ kawa.moc }}</p>
         <p><b>Ocena:</b> {{ kawa.ocena }}</p>
         <p><b>Uwagi:</b> {{ kawa.uwagi }}</p>
+        <br/>
+        <p><a href="{% url 'kawa_list' %}">Powrót do listy kaw</a></p>
         <br/>
     </div>   
 {% endblock %}

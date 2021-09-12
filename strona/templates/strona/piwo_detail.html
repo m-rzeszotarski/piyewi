@@ -12,6 +12,7 @@
             <a class="btn btn-default" href="{% url 'piwo_remove' pk=piwo.pk %}"><span class="glyphicon glyphicon-remove"></span></a>
         {% endif %}
         <h2>{{ piwo.firma }}: {{ piwo.nazwa }}</h2>
+        <p><b>Autor recenzji:</b> {{ piwo.autor }}</p>
         <p><b>Typ:</b> {{ piwo.typ }}</p>
         <p><b>Aromat:</b> {{ piwo.aromat }}</p>
         <p><b>Smak:</b> {{ piwo.smak }}</p>
@@ -24,6 +25,8 @@
         <p><b>Zgazowanie:</b> {{ piwo.zgazowanie }}</p>
         <p><b>Ocena:</b> {{ piwo.ocena }}</p>
         <p><b>Uwagi:</b> {{ piwo.uwagi }}</p>
+        <br/>
+        <p><a href="{% url 'piwo_list' %}">Powrót do listy piw</a></p>
         <br/>
     </div>   
 {% endblock %}

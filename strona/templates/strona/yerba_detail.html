@@ -12,6 +12,7 @@
             <a class="btn btn-default" href="{% url 'yerba_remove' pk=yerba.pk %}"><span class="glyphicon glyphicon-remove"></span></a>
         {% endif %}
         <h2>{{ yerba.firma }}: {{ yerba.nazwa }}</h2>
+        <p><b>Autor recenzji:</b> {{ yerba.autor }}</p>
         <p><b>Zapylenie:</b> {{ yerba.zapylenie }}</p>
         <p><b>Aromat:</b> {{ yerba.aromat }}</p>
         <p><b>Moc:</b> {{ yerba.moc }}</p>
@@ -20,6 +21,8 @@
         <p><b>Trwałość:</b> {{ yerba.trwałość }}</p>
         <p><b>Ocena:</b> {{ yerba.ocena }}</p>
         <p><b>Uwagi:</b> {{ yerba.uwagi }}</p>
+        <br/>
+        <p><a href="{% url 'yerba_list' %}">Powrót do listy yerb</a></p>
         <br/>
     </div>   
 {% endblock %}
