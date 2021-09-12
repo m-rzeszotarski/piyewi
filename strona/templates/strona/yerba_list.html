@@ -4,8 +4,8 @@
     <h1>Lista Yerb<br/><small><a href="{% url 'yerba_new' %}"><small><span class="glyphicon glyphicon-plus"></span></small> Dodaj nową recencję</small></a></h1>
     <br/>
     <table id = "table" class = "table table-bordered display">
-        <thead class = "alert-success">
-            <tr>
+        <thead>
+            <tr style="background-color: #e6571f; font-family: Helvetica; color: antiquewhite;">
                 <th>Firma</th>
                 <th>Nazwa</th>
                 <th>Zapylenie</th>
@@ -21,7 +21,7 @@
         <tbody>
             {% for yerba in yerbas %}
                 {% if yerba.zatwierdzony %}
-                    <tr>
+                    <tr style="font-family: Helvetica; text-align: center;">
                         <td>{{ yerba.firma }}</td>
                         <td><a href="{% url 'yerba_detail' pk=yerba.pk %}">{{ yerba.nazwa }}</a></td>
                         <td>{{ yerba.zapylenie }}</td>

@@ -4,8 +4,8 @@
     <h1>Lista Piw<br/><small><a href="{% url 'piwo_new' %}"><small><span class="glyphicon glyphicon-plus"></span></small> Dodaj nową recencję</small></a></h1>
     <br/>
     <table id = "table" class = "table table-bordered display">
-        <thead class = "alert-success">
-            <tr>
+        <thead>
+            <tr style="background-color: #e6571f; font-family: Helvetica; color: antiquewhite;">
                 <th>Browar</th>
                 <th>Nazwa</th>
                 <th>Typ</th>
@@ -24,7 +24,7 @@
         <tbody>
             {% for piwo in piwos %}
                 {% if piwo.zatwierdzony %}
-                    <tr>
+                    <tr style="font-family: Helvetica; text-align: center;">
                         <td>{{ piwo.firma }}</td>
                         <td><a href="{% url 'piwo_detail' pk=piwo.pk %}">{{ piwo.nazwa }}</a></td>
                         <td>{{ piwo.typ }}</td>

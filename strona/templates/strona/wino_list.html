@@ -4,8 +4,8 @@
     <h1>Lista Win<br/><small><a href="{% url 'wino_new' %}"><small><span class="glyphicon glyphicon-plus"></span></small> Dodaj nową recencję</small></a></h1>
     <br/>
     <table id = "table" class = "table table-bordered display">
-        <thead class = "alert-success">
-            <tr>
+        <thead>
+            <tr style="background-color: #e6571f; font-family: Helvetica; color: antiquewhite;">
                 <th>Winnica</th>
                 <th>Nazwa</th>
                 <th>Typ</th>
@@ -21,7 +21,7 @@
         <tbody>
             {% for wino in winos %}
                 {% if wino.zatwierdzony %}
-                    <tr>
+                    <tr style="font-family: Helvetica; text-align: center;">
                         <td>{{ wino.firma }}</td>
                         <td><a href="{% url 'wino_detail' pk=wino.pk %}">{{ wino.nazwa }}</a></td>
                         <td>{{ wino.typ }}</td>
