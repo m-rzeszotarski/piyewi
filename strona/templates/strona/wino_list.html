@@ -8,6 +8,7 @@
                 <th>Winnica</th>
                 <th>Nazwa</th>
                 <th>Typ</th>
+                <th>Zawartość cukru</th>
                 <th>Kolor</th>
                 <th>Klarowność</th>
                 <th>Musowanie</th>
@@ -24,6 +25,7 @@
                         <td>{{ wino.firma }}</td>
                         <td><a href="{% url 'wino_detail' pk=wino.pk %}">{{ wino.nazwa }}</a></td>
                         <td>{{ wino.typ }}</td>
+                        <td>{{ wino.zawartość_cukru }}</td>
                         <td>{{ wino.kolor }}</td>
                         <td>{{ wino.klarowność }}</td>
                         <td>{{ wino.musowanie }}</td>

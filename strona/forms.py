@@ -1,5 +1,7 @@
 from django import forms
 from .models import Kawa, Yerba, Piwo, Wino
+from crispy_forms.helper import FormHelper
+from crispy_forms.layout import Layout, Fieldset, ButtonHolder, Submit, Field
 
 class YerbaForm(forms.ModelForm):
 
@@ -9,6 +11,32 @@ class YerbaForm(forms.ModelForm):
         labels = {
             'autor' : "Twój nick",
         }
+    
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.helper = FormHelper()
+        self.helper.form_id = 'id-exampleForm'
+        self.helper.form_class = 'blueForms'
+        self.helper.form_method = 'post'
+        self.helper.form_action = 'submit_survey'
+        self.helper.form_class = 'form-horizontal'
+        self.helper.label_class = 'col-lg-2'
+        self.helper.field_class = 'col-lg-8'
+        self.helper.layout = Layout(
+            Field('autor', css_class="form50"), 
+            Field('firma', css_class="form50"), 
+            Field('nazwa', css_class="form50"), 
+            Field('zapylenie', css_class="form10"), 
+            Field('aromat', css_class="form10"), 
+            Field('moc', css_class="form10"), 
+            Field('goryczka', css_class="form10"),  
+            Field('nuty_owocowe', css_class="form10"), 
+            Field('trwałość', css_class="form10"), 
+            Field('uwagi'),
+            ButtonHolder(
+                Submit('submit', 'Zapisz', css_class='button2')
+            )
+        )
 
 class PiwoForm(forms.ModelForm):
 
@@ -18,6 +46,36 @@ class PiwoForm(forms.ModelForm):
         labels = {
             'autor' : "Twój nick",
         }
+    
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.helper = FormHelper()
+        self.helper.form_id = 'id-exampleForm'
+        self.helper.form_class = 'blueForms'
+        self.helper.form_method = 'post'
+        self.helper.form_action = 'submit_survey'
+        self.helper.form_class = 'form-horizontal'
+        self.helper.label_class = 'col-lg-2'
+        self.helper.field_class = 'col-lg-8'
+        self.helper.layout = Layout(
+            Field('autor', css_class="form50"), 
+            Field('firma', css_class="form50"), 
+            Field('nazwa', css_class="form50"), 
+            Field('typ', css_class="form50"), 
+            Field('aromat', css_class="form10"), 
+            Field('moc', css_class="form10"), 
+            Field('goryczka', css_class="form10"),
+            Field('nuty_owocowe', css_class="form10"),
+            Field('piana', css_class="form10"),
+            Field('kolor', css_class="form10"),
+            Field('mętność', css_class="form10"),
+            Field('zgazowanie', css_class="form10"),  
+            Field('ocena', css_class="form10"), 
+            Field('uwagi'),
+            ButtonHolder(
+                Submit('submit', 'Zapisz', css_class='button2')
+            )
+        )
 
 class WinoForm(forms.ModelForm):
 
@@ -28,6 +86,7 @@ class WinoForm(forms.ModelForm):
             'firma',
             'nazwa',
             'typ',
+            'zawartość_cukru',
             'kolor',
             'klarowność',
             'musowanie',
@@ -53,6 +112,7 @@ class WinoForm(forms.ModelForm):
             )
         labels = {
             'autor' : "Twój nick",
+            'zawartość_cukru' : "Zawartość cukru",
             'aromat' : "Aromat (intensywność)",
             'kolor' : "Kolor (jak bardzo ciemne)",
             'nuty_zielonych_owoców' : "Czy wyczuwasz nuty zielonych owoców? (np. jabłko, gruszka, agrest)",
@@ -72,6 +132,47 @@ class WinoForm(forms.ModelForm):
             'nuty_minerałów' : "Czy wyczuwasz nuty mineralne? (np. sól, kamień)",
         }
 
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.helper = FormHelper()
+        self.helper.form_id = 'id-exampleForm'
+        self.helper.form_class = 'blueForms'
+        self.helper.form_method = 'post'
+        self.helper.form_action = 'submit_survey'
+        
+        self.helper.layout = Layout(
+            Field('autor', css_class="form50"), 
+            Field('firma', css_class="form50"), 
+            Field('nazwa', css_class="form50"),
+            Field('typ', css_class="form10"),
+            Field('zawartość_cukru', css_class="form10"),
+            Field('kolor', css_class="form10"),   
+            Field('klarowność', css_class="form10"), 
+            Field('musowanie', css_class="form10"), 
+            Field('aromat', css_class="form10"), 
+            Field('nuty_zielonych_owoców', css_class="form10"),
+            Field('nuty_czerwonych_owoców', css_class="form10"),
+            Field('nuty_czarnych_owoców', css_class="form10"),
+            Field('nuty_cytrusowe', css_class="form10"),  
+            Field('nuty_tropikalne', css_class="form10"),  
+            Field('nuty_pestkowców', css_class="form10"),  
+            Field('nuty_suszonych_owoców', css_class="form10"),  
+            Field('nuty_roślinne', css_class="form10"),  
+            Field('nuty_kwiatowe', css_class="form10"),  
+            Field('nuty_drożdżowe', css_class="form10"),  
+            Field('nuty_dojrzewające', css_class="form10"),  
+            Field('nuty_maślane', css_class="form10"),  
+            Field('nuty_dębowe', css_class="form10"),  
+            Field('nuty_maślane', css_class="form10"),  
+            Field('nuty_ziemne', css_class="form10"),  
+            Field('nuty_minerałów', css_class="form10"),    
+            Field('ocena', css_class="form10"), 
+            Field('uwagi'),
+            ButtonHolder(
+                Submit('submit', 'Zapisz', css_class='button2')
+            )
+        )
+
 class KawaForm(forms.ModelForm):
 
     class Meta:
@@ -81,3 +182,28 @@ class KawaForm(forms.ModelForm):
             'arabica' : "Arabica [%]",
             'autor' : "Twój nick",
         }
+    
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.helper = FormHelper()
+        self.helper.form_id = 'id-exampleForm'
+        self.helper.form_class = 'blueForms'
+        self.helper.form_method = 'post'
+        self.helper.form_action = 'submit_survey'
+        self.helper.form_class = 'form-horizontal'
+        self.helper.label_class = 'col-lg-2'
+        self.helper.field_class = 'col-lg-8'
+        self.helper.layout = Layout(
+            Field('autor', css_class="form50"), 
+            Field('firma', css_class="form50"), 
+            Field('nazwa', css_class="form50"), 
+            Field('arabica', css_class="form10"), 
+            Field('stopień_palenia', css_class="form10"), 
+            Field('kwasowość', css_class="form10"), 
+            Field('moc', css_class="form10"),  
+            Field('ocena', css_class="form10"), 
+            Field('uwagi'),
+            ButtonHolder(
+                Submit('submit', 'Zapisz', css_class='button2')
+            )
+        )

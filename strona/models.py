@@ -207,6 +207,17 @@ class Wino(models.Model):
         (NIE, 'nie'),
     ]
 
+    WYTRAWNE = 'wytrawne'
+    PÓŁWYTRAWNE = 'półwytrawne'
+    PÓŁSŁODKIE = 'półsłodkie'
+    SŁODKIE = 'słodkie'
+    ZAW_CUK = [
+        (WYTRAWNE, 'wytrawne'),
+        (PÓŁWYTRAWNE, 'półwytrawne'),
+        (PÓŁSŁODKIE, 'półsłodkie'),
+        (SŁODKIE, 'słodkie'),
+    ]
+
     autor = models.CharField(max_length=200)
     data = models.DateField(default=timezone.now)
     firma = models.CharField(max_length=200)
@@ -215,6 +226,11 @@ class Wino(models.Model):
         max_length=32,
         choices=TYP_WINA,
         default=BIAŁE,
+    )
+    zawartość_cukru = models.CharField(
+        max_length=32,
+        choices=ZAW_CUK,
+        default=WYTRAWNE,
     )
     kolor = models.FloatField(
         choices=NUMERY,
