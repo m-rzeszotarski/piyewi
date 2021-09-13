@@ -113,9 +113,3 @@ a.button2:hover{
         margin:0.2em auto;
     }
 } 
-
-div.dataTables_wrapper  div.dataTables_filter {
-    width: 100%;
-    float: none;
-    text-align: right;
-  }
