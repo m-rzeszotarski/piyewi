@@ -32,11 +32,11 @@ class YerbaForm(forms.ModelForm):
             Field('goryczka', css_class="form10"),  
             Field('nuty_owocowe', css_class="form10"), 
             Field('trwałość', css_class="form10"), 
+            Field('ocena'),
             Field('uwagi'),
-            ButtonHolder(
-                Submit('submit', 'Zapisz', css_class='button2')
-            )
+            
         )
+        self.helper.add_input(Submit('submit', 'Zapisz'))
 
 class PiwoForm(forms.ModelForm):
 
@@ -72,10 +72,8 @@ class PiwoForm(forms.ModelForm):
             Field('zgazowanie', css_class="form10"),  
             Field('ocena', css_class="form10"), 
             Field('uwagi'),
-            ButtonHolder(
-                Submit('submit', 'Zapisz', css_class='button2')
-            )
         )
+        self.helper.add_input(Submit('submit', 'Zapisz'))
 
 class WinoForm(forms.ModelForm):
 
@@ -168,10 +166,8 @@ class WinoForm(forms.ModelForm):
             Field('nuty_minerałów', css_class="form10"),    
             Field('ocena', css_class="form10"), 
             Field('uwagi'),
-            ButtonHolder(
-                Submit('submit', 'Zapisz', css_class='button2')
-            )
         )
+        self.helper.add_input(Submit('submit', 'Zapisz'))
 
 class KawaForm(forms.ModelForm):
 
@@ -203,7 +199,5 @@ class KawaForm(forms.ModelForm):
             Field('moc', css_class="form10"),  
             Field('ocena', css_class="form10"), 
             Field('uwagi'),
-            ButtonHolder(
-                Submit('submit', 'Zapisz', css_class='button2')
-            )
         )
+        self.helper.add_input(Submit('submit', 'Zapisz'))
