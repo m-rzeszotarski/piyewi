@@ -8,6 +8,7 @@
                 <th>Browar</th>
                 <th>Nazwa</th>
                 <th>Typ</th>
+                <th>Styl</th>
                 <th>Aromat</th>
                 <th>Moc</th>
                 <th>Goryczka</th>
@@ -27,6 +28,7 @@
                         <td>{{ piwo.firma }}</td>
                         <td><a href="{% url 'piwo_detail' pk=piwo.pk %}">{{ piwo.nazwa }}</a></td>
                         <td>{{ piwo.typ }}</td>
+                        <td>{{ piwo.styl }}</td>
                         <td>{{ piwo.aromat }}</td>
                         <td>{{ piwo.moc }}</td>
                         <td>{{ piwo.goryczka }}</td>

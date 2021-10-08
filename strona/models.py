@@ -116,6 +116,9 @@ class Piwo(models.Model):
         choices=TYP_PIWA,
         default=JASNE,
     )
+    styl = models.CharField(
+        max_length=200,
+        default="styl")
     aromat = models.FloatField(
         choices=NUMERY,
         default=0

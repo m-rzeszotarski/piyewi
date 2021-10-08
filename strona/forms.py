@@ -42,7 +42,7 @@ class PiwoForm(forms.ModelForm):
 
     class Meta:
         model = Piwo
-        fields = ('autor', 'firma', 'nazwa', 'typ', 'aromat', 'moc', 'goryczka', 'nuty_owocowe', 'piana', 'kolor', 'mętność', 'zgazowanie', 'ocena', 'uwagi',)
+        fields = ('autor', 'firma', 'nazwa', 'typ', 'styl', 'aromat', 'moc', 'goryczka', 'nuty_owocowe', 'piana', 'kolor', 'mętność', 'zgazowanie', 'ocena', 'uwagi',)
         labels = {
             'autor' : "Twój nick",
         }
@@ -62,6 +62,7 @@ class PiwoForm(forms.ModelForm):
             Field('firma', css_class="form50"), 
             Field('nazwa', css_class="form50"), 
             Field('typ', css_class="form50"), 
+            Field('styl', css_class="form50"),
             Field('aromat', css_class="form10"), 
             Field('moc', css_class="form10"), 
             Field('goryczka', css_class="form10"),
