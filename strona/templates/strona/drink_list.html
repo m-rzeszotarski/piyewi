@@ -1,0 +1,14 @@
+{% extends 'strona/base.html' %}
+
+{% block content %}
+    <h1>Przepisy na drinki<br/><small><a href="{% url 'drink_new' %}" class="button2">Dodaj nowy przepis</small></a></h1>
+            
+    {% for drink in drinks %}
+        {% if drink.zatwierdzony %}
+            <div>
+                <h2><a href="{% url 'drink_detail' pk=drink.pk %}">{{ drink.nazwa }}</a></h2>
+                <p>{{ drink.opis|linebreaksbr }}</p>
+            </div>       
+        {% endif %}
+    {% endfor %}
+{% endblock %}

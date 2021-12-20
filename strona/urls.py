@@ -27,6 +27,12 @@ urlpatterns = [
     path('kawa/<int:pk>/edit/', views.kawa_edit, name='kawa_edit'),
     path('kawa/<int:pk>/remove/', views.kawa_remove, name='kawa_remove'),
     path('kawa/<int:pk>/zatwierdzenie/', views.kawa_zatwierdzenie, name='kawa_zatwierdzenie'),
+     path('drink_list', views.drink_list, name='drink_list'),
+    path('drink/<int:pk>/', views.drink_detail, name='drink_detail'),
+    path('drink/new', views.drink_new, name='drink_new'),
+    path('drink/<int:pk>/edit/', views.drink_edit, name='drink_edit'),
+    path('drink/<int:pk>/remove/', views.drink_remove, name='drink_remove'),
+    path('drink/<int:pk>/zatwierdzenie/', views.drink_zatwierdzenie, name='drink_zatwierdzenie'),
     path('recenze_list', views.recenzje_list, name='recenzje_list'),
     path('wino_opis_nut', views.wino_opis_nut, name='wino_opis_nut'),
 ]

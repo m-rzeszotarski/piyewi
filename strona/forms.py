@@ -1,5 +1,5 @@
 from django import forms
-from .models import Kawa, Yerba, Piwo, Wino
+from .models import Kawa, Yerba, Piwo, Wino, Drink
 from crispy_forms.helper import FormHelper
 from crispy_forms.layout import Layout, Fieldset, ButtonHolder, Submit, Field
 
@@ -199,5 +199,32 @@ class KawaForm(forms.ModelForm):
             Field('moc', css_class="form10"),  
             Field('ocena', css_class="form10"), 
             Field('uwagi'),
+        )
+        self.helper.add_input(Submit('submit', 'Zapisz'))
+
+class DrinkForm(forms.ModelForm):
+
+    class Meta:
+        model = Drink
+        fields = ('autor', 'nazwa', 'opis')
+        labels = {
+            'autor' : "Twój nick",
+            'opis' : "Jak przygotować?"
+        }
+    
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.helper = FormHelper()
+        self.helper.form_id = 'id-exampleForm'
+        self.helper.form_class = 'blueForms'
+        self.helper.form_method = 'post'
+        self.helper.form_action = 'submit_survey'
+        self.helper.form_class = 'form-horizontal'
+        self.helper.label_class = 'col-lg-2'
+        self.helper.field_class = 'col-lg-8'
+        self.helper.layout = Layout(
+            Field('autor', css_class="form50"), 
+            Field('nazwa', css_class="form50"), 
+            Field('opis', css_class="form50"), 
         )
         self.helper.add_input(Submit('submit', 'Zapisz'))

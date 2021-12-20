@@ -1,8 +1,8 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.utils import timezone
 from django.contrib.auth.decorators import login_required
-from .models import Yerba, Piwo, Wino, Kawa
-from strona.forms import YerbaForm, PiwoForm, WinoForm, KawaForm
+from .models import Yerba, Piwo, Wino, Kawa, Drink
+from strona.forms import YerbaForm, PiwoForm, WinoForm, KawaForm, DrinkForm
 
 def glowna(request):
     return render(request, 'strona/glowna.html')
@@ -202,6 +202,54 @@ def kawa_zatwierdzenie(request, pk):
     kawa.zatwierdzenie()
     return redirect('recenzje_list')
 
+## drink
+
+def drink_list(request):
+    drinks = Drink.objects.all()
+    return render(request, 'strona/drink_list.html', {'drinks': drinks})
+
+def drink_detail(request, pk):
+    drink = get_object_or_404(Drink, pk=pk)
+    return render(request, 'strona/drink_detail.html', {'drink': drink})
+
+def drink_new(request):
+    if request.method == "POST":
+        form = DrinkForm(request.POST)
+        if form.is_valid():
+            drink = form.save(commit=False)
+            drink.data = timezone.now()
+            drink.save()
+            return redirect('drink_detail', pk=drink.pk)
+    else:
+        form = DrinkForm()
+    return render(request, 'strona/drink_edit.html', {'form': form})
+
+@login_required
+def drink_edit(request, pk):
+    drink = get_object_or_404(Drink, pk=pk)
+    if request.method == "POST":
+        form = DrinkForm(request.POST, instance=drink)
+        if form.is_valid():
+            drink = form.save(commit=False)
+            drink.data = timezone.now()
+            drink.save()
+            return redirect('drink_detail', pk=drink.pk)
+    else:
+        form = DrinkForm(instance=drink)
+    return render(request, 'strona/drink_edit.html', {'form': form})
+
+@login_required
+def drink_remove(request, pk):
+    drink = get_object_or_404(Drink, pk=pk)
+    drink.delete()
+    return redirect('drink_list')
+
+@login_required
+def drink_zatwierdzenie(request, pk):
+    drink = get_object_or_404(Drink, pk=pk)
+    drink.zatwierdzenie()
+    return redirect('recenzje_list')
+
 ## panel recenzji
 
 @login_required
@@ -210,5 +258,6 @@ def recenzje_list(request):
     piwos = Piwo.objects.all()
     winos = Wino.objects.all()
     kawas = Kawa.objects.all()
+    drinks = Drink.objects.all()
 
-    return render(request, 'strona/recenzje_list.html', {'yerbas' : yerbas, 'piwos' : piwos, 'winos' : winos, 'kawas': kawas})
+    return render(request, 'strona/recenzje_list.html', {'yerbas' : yerbas, 'piwos' : piwos, 'winos' : winos, 'kawas': kawas, 'drinks' : drinks})

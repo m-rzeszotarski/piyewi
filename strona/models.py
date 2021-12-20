@@ -413,3 +413,22 @@ class Kawa(models.Model):
 
     def __str__(self):
         return self.nazwa
+
+## drink
+
+class Drink(models.Model):
+    autor = models.CharField(max_length=200)
+    data = models.DateField(default=timezone.now)
+    nazwa = models.CharField(max_length=200)
+    opis = models.TextField()
+
+    zatwierdzony = models.BooleanField(default=False)
+
+    def zatwierdzenie(self):
+        self.zatwierdzony = True
+        self.save()
+
+    def __str__(self):
+        return self.nazwa
+
+

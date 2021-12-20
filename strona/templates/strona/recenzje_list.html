@@ -76,4 +76,15 @@
             </div>  
         {% endif %} 
     {% endfor %}
+    {% for drink in drinks %}
+        {% if not drink.zatwierdzony %}
+            <div class="strona">
+                <a class="btn btn-default" href="{% url 'drink_remove' pk=drink.pk %}"><span class="glyphicon glyphicon-remove"></span></a>
+                <a class="btn btn-default" href="{% url 'drink_zatwierdzenie' pk=drink.pk %}"><span class="glyphicon glyphicon-ok"></span></a>
+                <h3><a href="{% url 'drink_detail' pk=drink.pk %}">Drink: {{ drink.nazwa }}</a></h3>
+                <p>{{ drink.opis|linebreaksbr }}</p>
+                <br/>
+            </div>   
+        {% endif %}
+    {% endfor %}  
 {% endblock %}
